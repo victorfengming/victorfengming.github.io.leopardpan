@@ -22,7 +22,8 @@ title: 关于我
 整挺好组：
 <a href="https://zhengyupengzz.github.io/">宇鹏的博客</a> &nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="https://awa-JieSang.github.io/">张杰的博客</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="https://1978413822.github.io/">岳阳的博客</a><br>
+<a href="https://1978413822.github.io/">岳阳的博客</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://llzanz.github.io/">陈赞的博客</a><br>
 <br>
 ➩ 漂流瓶联系组：
 <a href="https://caoyang7.github.io/">哈哈的博客</a> &nbsp;&nbsp;|&nbsp;&nbsp;
