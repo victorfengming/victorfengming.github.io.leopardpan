@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "git生成SSH并提交"
+title: "git生成SSH并提交(在github中配置密钥)"
 date: 2019-08-19 
 tags: Git solution 
 ---
