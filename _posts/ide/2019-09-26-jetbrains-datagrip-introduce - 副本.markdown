@@ -15,9 +15,6 @@ jetbrains系列的IDE被认为是业内最强大的集成开发环境
 
 [victorfengming/jetbrains_settings](https://github.com/victorfengming/jetbrains_settings)
 
-![jetbrains_settings](/images/posts/ide/jetbrains_settings.png)
+jetbrains_settings.png
 
-感觉有用的同学可以帮小编`Star`一下
-
-您的支持就是我的动力
-
+感觉有用的可以帮小编点击Star一下

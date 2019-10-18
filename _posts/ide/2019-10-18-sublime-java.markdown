@@ -5,12 +5,12 @@ date: 2019-10-18
 tags: ide solution sublime
 ---
 
-<div id="content_views" class="markdown_views">
-                    <!-- flowchart 箭头图标 勿删 -->
-                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-                    </svg>
-                                            <h2 id="问题"><a name="t0"></a>问题？</h2>
+
+<!-- flowchart 箭头图标 勿删 -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+</svg>
+                        <h2 id="问题"><a name="t0"></a>问题？</h2>
 
 <ul>
 <li>把SublimeText当作一个轻量级的编译工具来用还是不错的，可是当我下载好并且写了一个HelloWord的Java程序之后，它居然只编译不运行！那么我们就来解决这个问题</li>
@@ -59,4 +59,4 @@ tags: ide solution sublime
 <h2 id="然后然我们来看看结果如何"><a name="t5"></a>然后然我们来看看结果如何</h2>
 
 <p><img src="/images/posts/ide/sublime_java.png" alt="sublime_java" title=""> <br>
-It Works！！！</p>                                    </div>
+It Works！！！</p>                                  
