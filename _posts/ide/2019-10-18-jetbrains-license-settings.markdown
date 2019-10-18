@@ -1,7 +1,7 @@
 ---  
 layout: post  
 title: 'jetbrains IDE 设置和 license'  
-date: 2019-09-26  
+date: 2019-10-18  
 tags: ide solution jetbrains  
 ---  
   

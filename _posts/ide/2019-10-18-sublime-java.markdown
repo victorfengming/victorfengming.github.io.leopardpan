@@ -46,16 +46,15 @@ tags: ide solution sublime
 
 <h2 id="javacsublime-build"><a name="t4"></a>JavaC.sublime-build</h2>
 
-
-
-<pre class="prettyprint" name="code"><code class="language-shell hljs json has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">{
-    "<span class="hljs-attribute">cmd</span>": <span class="hljs-value">[<span class="hljs-string">"javac"</span>, <span class="hljs-string">"$file_name"</span>, <span class="hljs-string">"&amp;&amp;"</span>, <span class="hljs-string">"java"</span>, <span class="hljs-string">"$file_base_name"</span>]</span>, 
-    "<span class="hljs-attribute">working_dir</span>": <span class="hljs-value"><span class="hljs-string">"${project_path:${folder}}"</span></span>, 
-    "<span class="hljs-attribute">selector</span>": <span class="hljs-value"><span class="hljs-string">"source.java"</span></span>, 
-    "<span class="hljs-attribute">shell</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>, 
-    "<span class="hljs-attribute">encoding</span>":<span class="hljs-value"><span class="hljs-string">"utf-8"</span> 
-</span>}
-<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li></ul></pre>
+```python
+{
+    "cmd": ["javac", "$file_name", "&&", "java", "$file_base_name"], 
+    "working_dir": "${project_path:${folder}}", 
+    "selector": "source.java", 
+    "shell": true, 
+    "encoding":"utf-8" 
+}
+```
 
 <h2 id="然后然我们来看看结果如何"><a name="t5"></a>然后然我们来看看结果如何</h2>
 
