@@ -1,0 +1,63 @@
+---
+layout: post
+title: 'sublime text 配置java开发环境'
+date: 2019-10-18
+tags: ide solution sublime
+---
+
+<div id="content_views" class="markdown_views">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <h2 id="问题"><a name="t0"></a>问题？</h2>
+
+<ul>
+<li>把SublimeText当作一个轻量级的编译工具来用还是不错的，可是当我下载好并且写了一个HelloWord的Java程序之后，它居然只编译不运行！那么我们就来解决这个问题</li>
+<li>注意：本教程针对的是Windows平台，Mac OS我已经试过了，并不行。</li>
+</ul>
+
+<h2 id="变化"><a name="t1"></a>变化</h2>
+
+<ul>
+<li>原本网上是有一些关于sublime text 2的教程的，可是Sublime Text 3 和2 有些区别，主要是原来的一些配置文件都被压缩成一个文件了。下面我们就来看看如何让Java程序在Sublime Text中编译和运行。</li>
+</ul>
+
+
+
+<h2 id="准备"><a name="t2"></a>准备</h2>
+
+<ul>
+<li>如果你已经配置好了JDK并且安装好了Sublime Text 3 ，那么就可以继续看下去了，否则，你应该先去配置环境和安装软件。</li>
+</ul>
+
+
+
+<h2 id="教程"><a name="t3"></a>教程</h2>
+
+<ol>
+<li>首先找到Sublime Text 3 安装目录下的<code>Java.sublime-package</code>文件。我的这个文件是在<code>C:\Program Files\Sublime Text 3\Packages</code></li>
+<li>使用WinRAR或者其他解压软件打开上一步中说的文件</li>
+<li>找到<code>JavaC.sublime-build</code>文件并且使用Sublime Text 3 打开，修改内容为下文给出的内容</li>
+<li>然后保存，WinRAR会提示是否保存修改的文件到压缩文件，当然选是</li>
+</ol>
+
+
+
+<h2 id="javacsublime-build"><a name="t4"></a>JavaC.sublime-build</h2>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-shell hljs json has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">{
+    "<span class="hljs-attribute">cmd</span>": <span class="hljs-value">[<span class="hljs-string">"javac"</span>, <span class="hljs-string">"$file_name"</span>, <span class="hljs-string">"&amp;&amp;"</span>, <span class="hljs-string">"java"</span>, <span class="hljs-string">"$file_base_name"</span>]</span>, 
+    "<span class="hljs-attribute">working_dir</span>": <span class="hljs-value"><span class="hljs-string">"${project_path:${folder}}"</span></span>, 
+    "<span class="hljs-attribute">selector</span>": <span class="hljs-value"><span class="hljs-string">"source.java"</span></span>, 
+    "<span class="hljs-attribute">shell</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>, 
+    "<span class="hljs-attribute">encoding</span>":<span class="hljs-value"><span class="hljs-string">"utf-8"</span> 
+</span>}
+<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li></ul></pre>
+
+<h2 id="然后然我们来看看结果如何"><a name="t5"></a>然后然我们来看看结果如何</h2>
+
+<p><img src="/images/posts/ide/sublime_java.png" alt="sublime_java" title=""> <br>
+It Works！！！</p>                                    </div>
