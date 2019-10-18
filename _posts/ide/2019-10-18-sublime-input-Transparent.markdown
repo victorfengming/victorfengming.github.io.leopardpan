@@ -13,13 +13,13 @@ tags: ide solution sublime
 <div class="htmledit_views" id="content_views">
                                             <p>目前知道的两种方法设置（个人推荐使用方法1）：</p>
 
-<p>方法1：</p>
+<h3>方法1：</h3>
 
 <p>打开sublime text3，Ctrl+shift+P，install package，transparency，依次输入以上命令进行安装，安装完成后可以在菜单View-Window's transparency下进行调节。</p>
 
 <p>觉得好用的朋友可以在<a href="https://github.com/vhanla/SublimeTextTrans" rel="nofollow" data-token="31baa5c269a03297b6d8ab40099432e7">这里</a>给原作者点个star。</p>
 
-<p>方法2：使用插件，如下：</p>
+<h3>方法2：使用插件，如下：</h3>
 
 <p>第一步：软件下载地址：http://pan.baidu.com/s/1jHYzKl4</p>
 
