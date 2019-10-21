@@ -9,9 +9,9 @@ tags: Java basis tomcat
 Tomcat 服务器是一个免费的开放源代码的Web 应用服务器
 
 ### 1.下载
-https://tomcat.apache.org/
+tomcat的官方网站:https://tomcat.apache.org/
 ### 2.安装
-解压缩到哪就行了
+解压缩到哪就行了,不用安装的
 ### 3.卸载
 删除目录即可
 ### 4.启动
@@ -41,7 +41,7 @@ https://tomcat.apache.org/
     * 点击启动窗口的X
 
 ### 6.配置
-部署项目的方式:
+#### 部署项目的方式:
 1. 直接将项目放到webapps目录下面即可.
     * /hello: 项目的访问路径-->虚拟路径
     * 简化部署:将项目打成一个war包,再将war包放置到webapps目录下面.
@@ -58,3 +58,15 @@ https://tomcat.apache.org/
 <Context docBase="E:\hello" />
 ```
 * 虚拟目录:xml文件的名称    
+
+#### 静态项目和动态项目
+```
+* 目录结构
+    * java 动态项目的目录结构:
+        -- 项目的根目录
+            -- web-INF目录:
+                -- web.xml:web项目的核心配置文件(下面那俩可以没有,这个得有)
+                -- classes目录:放置字节码我呢间的目录
+                -- libmul:放置依赖的jar包
+```
+#### 将tomcat集成到IDEA中, 并且创建JavaEE的项目,部署项目.
