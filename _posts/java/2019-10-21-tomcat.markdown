@@ -60,7 +60,7 @@ tomcat的官方网站:https://tomcat.apache.org/
 * 虚拟目录:xml文件的名称    
 
 #### 静态项目和动态项目
-```
+
 * 目录结构
     * java 动态项目的目录结构:
         -- 项目的根目录
@@ -68,5 +68,5 @@ tomcat的官方网站:https://tomcat.apache.org/
                 -- web.xml:web项目的核心配置文件(下面那俩可以没有,这个得有)
                 -- classes目录:放置字节码我呢间的目录
                 -- libmul:放置依赖的jar包
-```
+
 #### 将tomcat集成到IDEA中, 并且创建JavaEE的项目,部署项目.

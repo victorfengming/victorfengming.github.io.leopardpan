@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'servlet的配置以及使用'
+date: 2019-10-22
+tags: Java basis servlet
+---
+
+## servlet:server applet
+* 概念:运行在服务器端的小程序
+    * servlet就是一个接口,定义了java类被浏览器访问到(tomcat)识别的规则.
+    * 将来我们自定义一个类,实现servlet接口,复写方法.
+* 快速入门:
+    1. 创建一个JavaEE项目
+    javaee7,tomcat路径配置
+    2. 定义一个类,实现servlet接口
+        * public class ServletDemo1 implements Servlet 
+    3. 实现接口中的抽象方法
+    alt+enter
+    4. 配置servlet
+
+    在web.xml中配置
+    ```html
+    <!--    配置servlet-->
+    <servlet>
+        <servlet-name>demo1</servlet-name>
+        <servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class>
+    </servlet>
+
+    <!--    写mapping-->
+    <servlet-mapping>
+        <servlet-name>demo1</servlet-name>
+        <url-pattern>/demo1</url-pattern>
+    </servlet-mapping>
+    ```
+
+* 执行原理:
+    1. 当服务器接收到客户端浏览器的请求后,会解析请求URL路径,获取访问的servlet的资源路径
+    2. 查找web.xml文件,是否有对应的`<url-pattern>`标签体内容.
+    3. 如果有,则在找到对应的`<servlet-class>`全类名
+    4. tomcat会将字节码文件加载进内存,并且创建其对象
+    5. 调用其方法
