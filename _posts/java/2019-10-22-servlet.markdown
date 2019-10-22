@@ -9,6 +9,7 @@ tags: Java basis servlet
 ### * 概念:运行在服务器端的小程序
 * servlet就是一个接口,定义了java类被浏览器访问到(tomcat)识别的规则.
 * 将来我们自定义一个类,实现servlet接口,复写方法.
+
 ### * 快速入门:
 1. 创建一个JavaEE项目
 javaee7,tomcat路径配置
