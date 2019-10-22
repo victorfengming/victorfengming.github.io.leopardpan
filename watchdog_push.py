@@ -13,6 +13,7 @@ import time
 import os
 
 
+
 def push(change):
     print('-'*76)
     os.system('git add .')
@@ -75,3 +76,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
+
