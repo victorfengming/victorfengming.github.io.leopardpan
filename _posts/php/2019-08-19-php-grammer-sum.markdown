@@ -2,11 +2,12 @@
 layout: post
 title: "PHP的特点小结"
 date: 2019-08-19 
-tags: PHP background basis 
+tags: PHP background basis python
 ---
 
 
-### 语法特点小结
+### 语法特点小结(对比python)
+
 1. PHP的变量开头要加上`$`符号,见到`$`就知道这个是一个变量
 2. PHP中的常量才是不用加`$`符号的
 3. PHP中$可以用来嵌套使用,从而实现动态的变量名的层级调用
