@@ -47,5 +47,14 @@ alt+enter
 
 ### * servlet(中的方法)中的生命周期    
 1. 被创建: 执行init方法,只执行一次
+    * servlet什么时候被创建?
+        * 默认情况下,第一次被访问时, servlet被创建
+        * 可以配置执行servlet的创建时机
+            * 在`<servlet>`标签下配置
+                1. 第一次被访问时, 创建
+                    * `<load-on-startup>`的值为负数
+                2. 在服务器启动时, 创建
+                    * `<load-on-startup>`的值为0或者正整数
+                        
 2. 提供服务: 执行service方法, 执行多次
 3. 被销毁: 执行destroy方法,只执行一次

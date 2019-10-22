@@ -59,7 +59,7 @@ tags: skills entertainment
 
         它能够标记出当前的文件夹为一种特定格式
 
-        比如说，在python中，如果这个文件夹中有init.py这个文件，那么就代表这个文件夹是一个python可识别的package包
+        比如说，在python中，如果这个文件夹中有__init__.py这个文件，那么就代表这个文件夹是一个python可识别的package包
 
         在举一个栗子，在git中，如果执行git init，会在当前文件夹中生成一个名字为.git的隐藏文件夹，用于存储git的版本信息
 
