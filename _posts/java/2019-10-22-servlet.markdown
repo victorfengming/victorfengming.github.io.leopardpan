@@ -39,3 +39,8 @@ tags: Java basis servlet
     3. 如果有,则在找到对应的`<servlet-class>`全类名
     4. tomcat会将字节码文件加载进内存,并且创建其对象
     5. 调用其方法
+
+* servlet(中的方法)中的生命周期    
+    1. 被创建: 执行init方法,只执行一次
+    2. 提供服务: 执行service方法, 执行多次
+    3. 被销毁: 执行destroy方法,只执行一次
