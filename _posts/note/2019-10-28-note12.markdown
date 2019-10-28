@@ -4,14 +4,16 @@ title: 'Java笔记11-软件开发流程&设计原则'
 date: 2019-10-28
 tags: Java basis note 
 ---
-### 今天内容:
+
+
+## 今天内容:
 - 1.常用的设计原则
 - 2.常用的设计模式
 - 3.常用的查找算法
 - 4.常用的排序算法
 
-### 1.常用的设计原则(记住)    
-#### 1.1软件的开发流程
+## 1.常用的设计原则(记住)    
+### 1.1软件的开发流程
     软件开发授权-投标 -> 100万
     1. 编写需求分析文档 => 
     2. 概要设计文档(架构) => 
@@ -28,8 +30,8 @@ tags: Java basis note
     架构师把架构架构错了,那就都白干了,重新架构意味着要加班,这种情况不多,因为架构师至少要5年以上经验的
     绝大多是是客户的需求问题,或者是客户要加功能.
     
-#### 1.2常用的设计原则
-##### 1. 开闭原则
+### 1.2常用的设计原则
+#### 1. 开放封闭原则(Open Close Principe)
     对于扩展开放,对于修改关闭,为了使程序的扩展性好,易于维护
 如:
 ```java
@@ -52,10 +54,101 @@ public class SubPerson extends Person{
     //...
 }
 ```
-##### 2. 里氏代换原则
+#### 2. 里氏代换原则(Liskov Substitution Principe)
 - 任何父类可以出现的地方,子类一定可以出现
 - 子类is a 父类
 - 在以后的开发中多使用继承和多态的理念
 
     多态的实际意义:
-        屏蔽不同子类的差异性,实现通用的编程
+        屏蔽不同子类的差异性,实现通用的编程,产生不同的结果
+    如:
+```java
+public statie void draw(Shape s){
+    s.show();
+}
+ShapeTest.draw(new Rect(1,2,3,4));
+ShapeTest.draw(new Circle(5,6,7));
+// 父类类型的引用能到的地方,子类的引用也能到
+```
+#### 3.依赖倒转原则(Dependence Inversion Principle)
+尽量多依赖于抽象类或接口而不是具体实现类,对子类具有强制性和规范性
+如:
+```java
+publice class Account{
+    public double getLix(){
+        // ...        
+    }
+}
+publice class FixedAccount extends Account{
+    //我这里想重写就重写,以为我的父类也不是抽象的 
+}
+```
+要是这样,就符合了 
+```java
+publice abstract class Account{
+    public abstract double getLix(){
+        // ...        
+    }
+}
+publice class FixedAccount extends Account{
+    // 这回就不得不继承了
+    @Override
+    public double getLixi(){} 
+}
+```
+#### 接口隔离原则
+    - 尽量依赖于小接口而不是大接口,避免接口的污染
+    - 可以降低耦合度
+    - 耦合主要指一个模块于其他模块之间的关联度.
+    
+如:
+```java
+public interface Animal{
+    public abstract void run();//描述奔跑 行为
+    public abstract void fly(); //描述飞行行为
+}
+
+public class Dog implements Animal{
+    public abstract void run(){...};
+    public abstract void fly(){
+//        这个方法没法写了
+    }
+}
+```
+#### 迪米特法则(最少知道原则) 
+    - 一个实体应当尽量少于其他实体之间 发生相互作用
+    - 低耦合,高内聚
+    - 高内聚就是指将一个实体应当将该实体应该拥有的功能尽量聚集在该实体内部
+    
+#### 合成复用原则 - 尽量多使用合成的方式,而不是继承的方式.
+如:
+```java
+public class A{
+    public void show(){...}
+    ... ...
+}
+public class B extends A{
+    public void test(){
+        // 调用show方法
+        show();
+    }
+    ... ...
+    // 这样不推荐,因为java只能单继承,或者说会影响调用show()方法时候的性能,因为继承会继承父类的所有方法
+}
+```    
+升级版
+```java
+public class A{
+    public void show(){...}
+    ... ...
+}
+public class B{
+    private A a;
+    public void test(){
+        // 调用show方法
+        a.show()
+    }
+    ... ...
+    // 这样不推荐,因为java只能单继承,或者说会影响调用show()方法时候的性能,因为继承会继承父类的所有方法
+}
+```    
