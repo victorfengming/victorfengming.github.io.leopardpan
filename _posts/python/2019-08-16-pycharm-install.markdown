@@ -49,7 +49,7 @@ PyCharm安装成功后,我们在桌面会发现一个快捷方式,双击打开
 ![img description](/images/posts/pycharm/install12.png)
 这里需要我们填写破解信息  
 ![img description](/images/posts/pycharm/install13.png)
-小编给大家提供了一个网站[IntlliJ IDEA注册码](http://idea.lanyus.com/)  
+小编给大家提供了一个网站[IntlliJ IDEA注册码](http://idea.medeming.com/jet/)  
 
 ![img description](/images/posts/pycharm/install14.png)
 点击获得注册码  

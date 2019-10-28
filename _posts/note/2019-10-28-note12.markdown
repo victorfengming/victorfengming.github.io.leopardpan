@@ -70,6 +70,7 @@ ShapeTest.draw(new Rect(1,2,3,4));
 ShapeTest.draw(new Circle(5,6,7));
 // 父类类型的引用能到的地方,子类的引用也能到
 ```
+
 ### 3.依赖倒转原则(Dependence Inversion Principle)
 尽量多依赖于抽象类或接口而不是具体实现类,对子类具有强制性和规范性
 如:
@@ -96,6 +97,7 @@ publice class FixedAccount extends Account{
     public double getLixi(){} 
 }
 ```
+
 ### 4.接口隔离原则
 - 尽量依赖于小接口而不是大接口,避免接口的污染
 - 可以降低耦合度
