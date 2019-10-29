@@ -2,7 +2,7 @@
 layout: post
 title: 'Deepin 搭建php开发环境'
 date: 2019-09-04
-tags: PHP deepin solution
+tags: php deepin solution
 ---
 
 <section>

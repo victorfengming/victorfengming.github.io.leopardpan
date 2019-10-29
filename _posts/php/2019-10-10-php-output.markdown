@@ -2,7 +2,7 @@
 layout: post
 title: "PHP中的输出语句对比"
 date: 2019-10-10 
-tags: PHP background basis 
+tags: php background basis 
 ---
 
 通过前面的学习了解了php的基本语法，今天向大家简单介绍php的几种输出方式：
