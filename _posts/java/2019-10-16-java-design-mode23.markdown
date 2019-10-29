@@ -2,7 +2,7 @@
 layout: post
 title: '23种设计模式汇总整理'
 date: 2019-10-15
-tags: Java basis python
+tags: Java basis
 ---
 
 版权声明：本文为CSDN博主「炸斯特」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
