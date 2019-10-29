@@ -377,6 +377,7 @@ public class Demo17PredicateNegate {
 数组当中有多条“姓名+性别”的信息如下，请通过 Predicate 接口的拼装将符合要求的字符串筛选到集合 ArrayList 中，需要同时满足两个条件:
 - 1. 必须为女生; 
 - 2. 姓名为4个字。
+
 ```java
 public class DemoPredicate {
        public static void main(String[] args) {
