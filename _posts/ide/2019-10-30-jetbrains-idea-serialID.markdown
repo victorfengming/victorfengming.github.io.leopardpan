@@ -17,7 +17,9 @@ java的序列化机制是通过在运行时判断类的serialVersionUID来验证
 
 ### 1、安装 serialVersionUID 插件：
 
-若你的IDEA已安装，则跳过此步骤；若未安装，参考 [IDEA插件安装](http://blog.csdn.net/qq_21033663/article/details/78477309)，搜索插件时使用关键词“serialVersionUID ”
+若你的IDEA已安装，则跳过此步骤；
+
+若未安装，参考 [IDEA插件安装](http://blog.csdn.net/qq_21033663/article/details/78477309)，搜索插件时使用关键词“serialVersionUID ”
 
 ### 2、设置你的IDEA为检查序列化ID
 
