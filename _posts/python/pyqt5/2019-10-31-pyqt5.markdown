@@ -1,0 +1,23 @@
+---
+layout: post
+title: "jupyter浅析"
+date: 2019-10-27 
+tags: Python solution basis
+---
+
+一个牛人的博客->[编程创造城市](http://bcczcs.com/blog/)
+
+学什么Java,Python它不香么?
+
+pyqt5,我来了
+
+学习pyqt5中遇到的问题汇总
+
+[python3.6：DLL load failed:找不到指定的模块（from PyQt5 import QtCore）](https://blog.csdn.net/proplume/article/details/88145115)
+
+
+国内清华的镜像安装pyqt5
+```cmd
+pip install pyqt5 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
