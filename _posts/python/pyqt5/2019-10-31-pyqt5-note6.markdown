@@ -1,0 +1,53 @@
+---
+layout: post
+title: "PyQt5学习笔记6"
+date: 2019-10-31 
+tags: Python solution basis PyQt5
+---
+
+
+  
+# PyQt5的第六课 - PyQt5类的封装
+### 知识回顾
+- 1.掌握纯代码写pyqt5程序
+- 2.显示提示框tooltip功能(这个玩意在所有的控件中都是存在的)
+
+### 代码封装思路
+- 1. 分析哪些代码需要封装:需要封装的就是我们对窗体配置的代码
+- 2. 利用类的继承特性
+- 3. 调用父类Qwidget的构造方法`super().__init__()`
+- 4. 调用自己的构造方法
+
+```python
+import sys
+
+from PyQt5.QtWidgets import QWidget,QApplication
+
+
+
+class MyClass(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("刘金玉编程")
+        self.setGeometry(30,40,300,200)
+        self.show()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    c = MyClass()
+    app.exec_()
+```
+### GUI位置大小函数setGeometry
+
+- 这个函数相当于resize函数和remove函数功能的合体
+- 函数使用格式:
+    控件对象.setGeometry(X轴,Y轴,宽度,高度)
+    
+### 信号
+- 窗体上的信号被app.exec_()死循环监听着.
+- 信号至少在QT中针对某个发生的时间的说法
+- 槽是QT中发生的具体的某个时间,就是槽
+- 窗体上的对GUI界面操作行为都是被监听着的
+    
