@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "PyQt5笔记"
-date: 2019-10-27 
+title: "PyQt5学习笔记"
+date: 2019-10-31 
 tags: Python solution basis
 ---
 
@@ -32,7 +32,8 @@ UIC用python3.7的,qtdesigner用的是anaconda3中的
 国内清华的镜像安装pyqt5
 ```cmd
 pip install pyqt5 -i https://pypi.tuna.tsinghua.edu.cn/simple
-```国内清华的镜像安装pyqt5-tools
+```
+国内清华的镜像安装pyqt5-tools
 ```cmd
 pip install pyqt5-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
