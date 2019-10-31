@@ -1,0 +1,16 @@
+---
+layout: post
+title: "PyQt5学习笔记6"
+date: 2019-10-31 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第七课 - PyQt5消息盒子QMessageBox
+
+### 知识回顾
+
+- 1. 使用类进行pyqt5的GUI开发封装
+- 2. 使用setGeometry哈数:大小,位置
+- 3. 掌握类的继承与内部屌用
+
