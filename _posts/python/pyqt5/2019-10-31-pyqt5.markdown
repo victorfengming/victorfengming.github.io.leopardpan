@@ -104,7 +104,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
 ```       
- 
+
 ### QT Designer 设计师界面
 #####  Geometry属性
 - X:代表窗体出现的位置是在屏幕的左上角水平方向0的位置
@@ -129,3 +129,7 @@ setObjectName
 - 作用:重新调整大小
 - 有两个参数,第一个参数表示宽度值,第二个参数表示高度值
 - 举例:form.resize(300,400)
+
+### Qt中信号的理解(说白了就像js中的事件)
+
+比如说单击事件,某个超时信号等都是qt中的信号,说到底其实就是界面上面发生了某个事件
