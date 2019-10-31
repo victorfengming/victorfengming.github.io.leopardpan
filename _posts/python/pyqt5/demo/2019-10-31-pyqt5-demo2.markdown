@@ -330,9 +330,4 @@ demo = Example()
 app.exec_()
 ```
 
-### 07消息盒子
-```python
-
-```
-
 
