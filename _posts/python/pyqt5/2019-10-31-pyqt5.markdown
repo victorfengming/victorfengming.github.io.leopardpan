@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "jupyter浅析"
+title: "PyQt5笔记"
 date: 2019-10-27 
 tags: Python solution basis
 ---
@@ -16,8 +16,55 @@ pyqt5,我来了
 [python3.6：DLL load failed:找不到指定的模块（from PyQt5 import QtCore）](https://blog.csdn.net/proplume/article/details/88145115)
 
 
+
+### 环境的准备
+
+anaconda3+pycharm+pyqt5
+
+这个方式没准备好
+
+所以我用的组合是
+
+UIC用python3.7的,qtdesigner用的是anaconda3中的
+
+清华大学开源镜像站,这个贼JB快(https://pypi.tuna.tsinghua.edu.cn/simple/)
+
 国内清华的镜像安装pyqt5
 ```cmd
 pip install pyqt5 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```国内清华的镜像安装pyqt5-tools
+```cmd
+pip install pyqt5-tools -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+安装完成之后需要在pycharm中配置两个扩展工具
+### QTdesigner
+- name:QTdesigner
+- Program:`
+E:\Python37\Lib\site-packages\pyqt5_tools\Qt\bin\designer.exe
+`
+- Working directory:`$FileDir$`
 
+### PyUIC
+- name:PyUIC
+- Program:`
+E:\Python37\python.exe
+`
+- Arguments:`-m PyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py`
+- Working directory:`$FileDir$`
+
+### 使用QtWidgets写第一个程序,基于pyqt5
+
+- 使用纯代码写第一个PyQt5程序
+```python
+import sys
+from PyQt5.QtWidgets import  QApplication, QWidget
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    w = QWidget()
+    w.resize(400,300)
+    w.move(200,300)
+    w.setWindowTitle("刘金玉编程")
+    w.show()
+    sys.exit(app.exec())
+```
