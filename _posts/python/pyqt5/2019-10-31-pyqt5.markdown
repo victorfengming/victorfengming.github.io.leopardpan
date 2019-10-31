@@ -5,6 +5,8 @@ date: 2019-10-31
 tags: Python solution basis
 ---
 
+
+# PyQt5的第一课
 一个牛人的博客->[编程创造城市](http://bcczcs.com/blog/)
 
 学什么Java,Python它不香么?
@@ -53,6 +55,8 @@ E:\Python37\python.exe
 - Arguments:`-m PyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py`
 - Working directory:`$FileDir$`
 
+# PyQt5的第二课
+
 ### 使用QtWidgets写第一个程序,基于pyqt5
 
 - 使用纯代码写第一个PyQt5程序
@@ -70,3 +74,23 @@ if __name__ == '__main__':
     w.show()
     sys.exit(app.exec())
 ```
+
+
+# PyQt5的第三课 - pyqt5与qtdesigner对照分析
+
+### 空的程序的生成的样子
+
+### QT Designer 设计师界面
+#####  Geometry属性
+- X:代表窗体出现的位置是在屏幕的左上角水平方向0的位置
+- Y:代表窗体出现的位置是在屏幕的左上角垂直方向0的位置
+- 宽度:窗体宽度(单位像素)
+- 高度:窗体高度(单位像素)
+
+### 补充PyUIC命令解析
+- 使用python.exe解释器
+- -mPyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py
+
+- 说明: -m表示调用某个模块,这里表示调用PyQt5.uic.pyuic模块
+-  $FileName$ 表示需要转换的源文件名称
+- o 表示需要生成目标文件,这里使用$FileNameWithoutExtension$表示与源文件相同的文件名称,但是不包含扩展名的目标文件,扩展名,我们通过自己连接.py,最终表示生成的python类型的文件
