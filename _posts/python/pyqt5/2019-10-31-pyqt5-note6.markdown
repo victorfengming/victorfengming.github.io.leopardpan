@@ -18,6 +18,7 @@ tags: Python solution basis PyQt5
 - 3. 调用父类Qwidget的构造方法`super().__init__()`
 - 4. 调用自己的构造方法
 
+### 用类的方式去实现空的窗口的代码
 ```python
 import sys
 
@@ -51,3 +52,29 @@ if __name__ == '__main__':
 - 槽是QT中发生的具体的某个时间,就是槽
 - 窗体上的对GUI界面操作行为都是被监听着的
     
+### 加入了按钮的点击关闭时间的代码    
+```python
+import sys
+
+from PyQt5.QtWidgets import QWidget, QApplication, QPushButton
+
+
+class MyClass(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("刘金玉编程")
+        self.setGeometry(30,40,300,200)
+        btn = QPushButton("关闭",self)
+        btn.move(5,6)
+        # 将信号发送到一个槽
+        # 设置按钮的点击后关闭窗体的时间
+        btn.clicked.connect(self.close)
+        self.show()
+
+app = QApplication(sys.argv)
+c = MyClass()
+app.exec_()
+```
