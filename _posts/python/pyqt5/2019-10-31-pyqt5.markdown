@@ -186,8 +186,53 @@ setObjectName
 ### show函数
 - pyqt5中的show函数的将窗体显示出来
 
+### 总结
+- 1. 掌握qtdesigner设计界面与pyuic转换后文件代码的对应关系
 
+- 2. 掌握pyqt5中界面中常用函数的基本用法
+
+- 3. 掌握如何调用生成界面的思想.实则是如何使用pyqt5纯代码写GUI界面的关键.
   
+
+# PyQt5的第四课 - pyqt5设置窗体图标
+
+在pyqt5之前,有pyqt1234不同的版本,我们直接学习pyqt5就行了
+
+pyqt4和pyqt5不互相兼容
+
+现在pyqt4已经放弃开发了
+
+### 知识回顾
+1. 纯pyqt5代码来创建窗体程序
+2. 掌握理解GUI窗体的开发原理
+
+### python的纯代码编写GUI
+最简单代码
+```python
+import sys
+from PyQt5.QtWidgets import QApplication,QWidget
+app = QApplication(sys.argv)
+w = QWidget()
+w.show()
+app.exec_()
+```
+
+### pyqt5设置窗体图标
+- 使用函数setWindowIcon函数
+- 设置图标需要类库的导入from PyQt5.QtGui import Qicon
+- 将Qicon类利用构造函数进行初始化
+
+### 图标到哪里下载?
+- 阿里巴巴图标库
+- https://www.iconfont.cn
+- 注意:下载图标尽量采用png或者gif格式,可以背景透明
+- 在项目中,我们往往会把所有的图标放到同一个文件夹中,然后通过相同路径进行调用.
+
+
+
+
+
+
 
 
 
