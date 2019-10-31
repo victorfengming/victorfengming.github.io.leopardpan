@@ -8,9 +8,11 @@ tags: Python solution basis PyQt5
   
 # PyQt5的第八课 - PyQt5窗体居中和布局
 
+
 ### 知识回顾
 1. 窗体事件的重写,closeEvent事件
 2. QMessageBox消息框的使用
+
 
 ### 窗体的居中
 - 默认情况下,如果没有添加窗体位置的函数,
@@ -18,15 +20,18 @@ tags: Python solution basis PyQt5
 - 通过desktop()函数阿里获取桌面控件的对象QDesktopWidget
 - 通过桌面对象的width()函数来获取屏幕的宽度的分辨率
 
+
 ### 标签文本控件
 - 使用类库Qlabel
 - 使用格式:
 lbl = QLabel("编程创造城市",self)
 
+
 ### 绝对布局
 - 直接通过move()到某个像素点的位置
 - 特点:非常灵活
 - 弱点:不能随着窗体的大小而变化
+
 
 ### 总结强调
 1. 掌握窗体居中布局的方法
