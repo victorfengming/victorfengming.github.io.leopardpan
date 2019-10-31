@@ -1,0 +1,17 @@
+---
+layout: post
+title: "PyQt5学习笔记8"
+date: 2019-10-31 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第八课 - PyQt5窗体居中和布局
+
+### 知识回顾
+1. 窗体事件的重写,closeEvent事件
+2. QMessageBox消息框的使用
+
+### 窗体的居中
+- 默认情况下,如果没有添加窗体位置的函数,
+
