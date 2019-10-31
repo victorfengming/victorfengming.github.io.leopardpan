@@ -1,0 +1,259 @@
+---
+layout: post
+title: "PyQt5案例汇总1"
+date: 2019-10-31 
+tags: Python solution basis PyQt5
+---
+
+
+
+[toc]
+
+
+
+# part one
+
+### 01Helloworld
+```python
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+
+    w = QWidget()
+    w.resize(250, 150)
+    w.move(300, 300)
+    w.setWindowTitle('Simple')
+    w.show()
+
+    sys.exit(app.exec_())
+
+```
+
+### 02窗口图标(面向对象版)
+```python
+
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QIcon
+
+class Example(QWidget):
+
+    def __init__(self):
+        # 调用爸爸的init初始化魔术方法
+        super().__init__()
+
+        self.initUI()
+    def initUI(self):
+        self.setGeometry(300, 300, 300, 220)
+        self.setWindowTitle('Icon')
+        self.setWindowIcon(QIcon('logo.png'))
+        self.show()
+
+# 这行代码表示,这个模块既可以自己执行,又可以被引用并且不执行
+# if __name__ == '__main__':
+
+
+app = QApplication(sys.argv)
+ex = Example()
+sys.exit(app.exec_())
+```
+
+
+### 03提示框
+```python
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip,
+    QPushButton, QApplication)
+from PyQt5.QtGui import QFont
+
+
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        QToolTip.setFont(QFont('SansSerif', 10))
+
+        self.setToolTip('This is a <b>QWidget</b> widget')
+
+        btn = QPushButton('Button', self)
+        btn.setToolTip('This is a <b>QPushButton</b> widget')
+        btn.resize(btn.sizeHint())
+        btn.move(50, 50)
+
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle('Tooltips')
+        self.show()
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+```
+
+
+
+
+### 04关闭窗口
+```python
+import sys
+from PyQt5.QtWidgets import QWidget, QPushButton, QApplication
+from PyQt5.QtCore import QCoreApplication
+
+
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        qbtn = QPushButton('Quit', self)
+        qbtn.clicked.connect(QCoreApplication.instance().quit)
+        qbtn.resize(qbtn.sizeHint())
+        qbtn.move(50, 50)
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Quit button')
+        self.show()
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+```
+
+
+### 05消息盒子
+```python
+
+import sys
+from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+
+
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Message box')
+        self.show()
+
+
+    def closeEvent(self, event):
+
+        reply = QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QMessageBox.Yes |
+            QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+
+```
+
+
+
+### 06窗口居中
+```python
+
+import sys
+from PyQt5.QtWidgets import QWidget, QDesktopWidget, QApplication
+
+class Example(QWidget):
+
+    def __init__(self):
+        print('init方法执行')
+        super().__init__()
+        self.initUI()
+
+
+    def initUI(self):
+        print('initUI方法执行')
+        self.resize(250, 150)
+        self.center()
+        self.setWindowTitle('Center')
+        self.show()
+
+
+    def center(self):
+        print('center方法执行')
+        qr = self.frameGeometry()
+        print('qr:',qr)
+        cp = QDesktopWidget().availableGeometry().center()
+        print('cp:',cp)
+        qr.moveCenter(cp)
+        print('qr的topLeft:',qr.topLeft())
+        self.move(qr.topLeft())
+
+
+
+app = QApplication(sys.argv)
+ex = Example()
+app.exec()
+
+```
+
+
+
+
+### 07状态栏
+```python
+
+import sys
+from PyQt5.QtWidgets import QMainWindow, QApplication
+
+
+class Example(QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        self.statusBar().showMessage('状态栏显示内容是有灵魂的')
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Statusbar')
+        self.show()
+
+
+
+app = QApplication(sys.argv)
+ex = Example()
+app.exec()
+```
+
