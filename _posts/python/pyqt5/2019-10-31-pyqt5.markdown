@@ -79,13 +79,43 @@ if __name__ == '__main__':
 # PyQt5的第三课 - pyqt5与qtdesigner对照分析
 
 ### 空的程序的生成的样子
+```python
+# -*- coding: utf-8 -*-
 
+# Form implementation generated from reading ui file 'first.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(500, 300)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+```       
+ 
 ### QT Designer 设计师界面
 #####  Geometry属性
 - X:代表窗体出现的位置是在屏幕的左上角水平方向0的位置
 - Y:代表窗体出现的位置是在屏幕的左上角垂直方向0的位置
 - 宽度:窗体宽度(单位像素)
 - 高度:窗体高度(单位像素)
+
+#####  ObjectName属性
+表示窗体对象的名称,对应到python代码中设置窗体名称的方法
+setObjectName
+- 窗体对象其实就是指QtWidgets的实例化对象
 
 ### 补充PyUIC命令解析
 - 使用python.exe解释器
@@ -94,3 +124,8 @@ if __name__ == '__main__':
 - 说明: -m表示调用某个模块,这里表示调用PyQt5.uic.pyuic模块
 -  $FileName$ 表示需要转换的源文件名称
 - o 表示需要生成目标文件,这里使用$FileNameWithoutExtension$表示与源文件相同的文件名称,但是不包含扩展名的目标文件,扩展名,我们通过自己连接.py,最终表示生成的python类型的文件
+
+### Resize函数
+- 作用:重新调整大小
+- 有两个参数,第一个参数表示宽度值,第二个参数表示高度值
+- 举例:form.resize(300,400)
