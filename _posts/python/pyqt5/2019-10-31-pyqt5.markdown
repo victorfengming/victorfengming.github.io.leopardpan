@@ -228,18 +228,83 @@ app.exec_()
 - 注意:下载图标尽量采用png或者gif格式,可以背景透明
 - 在项目中,我们往往会把所有的图标放到同一个文件夹中,然后通过相同路径进行调用.
 
+### QWidget中设置图标与QApplication中设置图标的区别
+- 通过QWidget设置出来的窗体的图标,可以是每个窗体一个图标.
+- 通过QApplication的`setWindowIcon(QIcon("./images/水枪.png"))`
+设置所有的窗体的默认图标
+
+- 注意:在mac系统中只能识别QApplication中设置的图标
+
+### 总结强调
+- 1.掌握基本的pyqt5纯代码编写GUI
+- 2.设置窗体的图标
+- 3.理解QApplication和QWidget设置图标的哟啥不一样的地方
 
 
+# PyQt5的第五课 - pyqt5显示提示框
+
+### 知识回顾
+- 1. 利用pyqt5纯代码编写第一个程序
+- 2. 掌握了程序图标的设置方法
+
+### 最基本的pyqt5代码
+```python
+import sys
+from PyQt5.QtWidgets import QApplication,QWidget
+
+app = QApplication(sys.argv)
+w = QWidget()
+w.show()
+app.exec_()
+```
 
 
+### 显示提示框
+- 使用函数setToolTip
+注意:基本上所有的控件,包括窗体都有setToolTip这个函数,这个函数基本上都有
 
+使用格式:
+    控件对象setToolTip(这里是需要提示的字符串)
 
+### 按钮控件
+- 使用类QPushButton
+- 基本使用:实例化一个按钮举例
+```
+# 按钮
+btn = QPushButton("老刘",w)
+```
+- 格式:
+- 声明定义一个实例化对象 的名称 = QPushButton(按钮文字,父容器)
 
+### 系统中文件查找技巧
+- 我们可以搜索包含`*ToolTip*`这个关键字的文件,直接搜索,搜不到,在两边加上`*`就能进行模糊搜索
 
+### 如何找到类
+- 1. 我们可以通过pycharm上面代码右键找到对应的pyqt5的文件安装所在位置
 
+- 2. 利用模糊查找到我们需要的类所在的pyqt5中的位置
 
+- 3. 到程序中导入找到的类
 
+### 显示框文字样式设置
+- 1. 需要导入QToolTip类库
 
+- 2. 通过QToolTip的setFont方法设置文字样式
+
+- 3. 需要导入Qfont类库
+
+- 4. 实例化QFont类进行文字样式设置
+
+- 5. 这个显示设置,是在全局样式上面显示提示效果的,说白了就是先显示后设置也好使
+
+### 总结强调
+- 1. 掌握基础pyqt5代码GUI编写
+
+- 2. 掌握显示框设置setToolTip函数
+
+- 3. 掌握显示框文字样式设置
+
+- 4. 掌握代码编写思路
 
 
 
