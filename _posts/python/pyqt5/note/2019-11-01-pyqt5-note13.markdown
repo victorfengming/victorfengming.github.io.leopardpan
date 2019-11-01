@@ -1,0 +1,42 @@
+---
+layout: post
+title: "PyQt5学习笔记13"
+date: 2019-11-01 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第十三课 - PyQt5复选框 QCheckBox控件事件应用
+
+### 知识回顾
+
+- 文本框事件的改变,qlineEdit单行文本框
+- 标签自适应adjustsize方法
+
+### 复选框
+- 使用控件QCheckBox
+- 使用格式
+- 变量对象 = QCheckBox(显示文本,父容器)
+- 这里的父容器可以是一个QWidget类型
+
+我们案例中的QFrame实际上本质是一个QWidget
+
+### 复选框状态改变信号
+- 使用statechanged信号,注意这个信号可以传以参数,这个参数是一个int类型.
+- 使用格式:
+- `self.复选框.stateChanged[int].connect(self.myState)`
+- `复选框.状态改变信号[整型参数].connect(类中的自定义方法)`
+- 使用案例:
+- `self.ck1.stateChanged[int].connect(self.myState)`
+
+### 如何区分通过信号传递过来的不同控件?
+- 直接通过self对象的sender方法就可以进行区分了
+
+### Qt中有很多枚举类表示 
+- 比如我们今天学习的选中复选框使用2对应表示为Qt.Checked
+- 写成枚举类型的好处就是方便我们阅读代码.
+
+### 总结强调
+- 复选框的状态改变事件statechanged
+- qt枚举
+- 掌握把控件放到容器中qframe
