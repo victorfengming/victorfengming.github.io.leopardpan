@@ -1,0 +1,50 @@
+---
+layout: post
+title: "PyQt5学习笔记14"
+date: 2019-11-01 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第十四课 - PyQt5滑块控件Qslider的应用
+
+### 知识回顾
+
+- 掌握了复选框QCheckBox
+- 枚举类中的值为2
+- 在Qframe中的应用
+
+### Qslider控件
+
+- 这个是一个滑块控件.用于方便左右滑动
+- 往往这类滑动更多的用于屏幕可以触碰的设备
+- 实则就是调用Qslider库
+- 进行实例化后进行调用
+- 使用格式:
+    变量名称 = Qslider(方向,父容器)
+- 水平方向值为1,垂直方向值为2(说白了你不写常量,你直接就写1,2都行了)    
+- 这个控件可以水平放置,也可以垂直放置Qt.Vertical
+- 应用举例:
+- QSlider(Qt.Horizontal.self)
+
+### 枚举类的存在类库
+- QtCore核心库
+- 
+
+### 滑块控件的最值设置(范围设置)
+- 最小值设置
+- 举例设置最小值为0:
+- `sl.setMinimum(0)`
+- 最大值设置
+- 举例设置最大值为255:
+- `sl.setMaximum(255)`
+
+### 滑块的滑动值变化事件
+- `滑块的格式:滑块对象名称.valueChanged[int].connect(对应)`
+- `sl.valueChanged[int].connect(self.myValue)`
+
+### 总结强调
+- 掌握滑块控件Qslider的使用
+- 掌握滑块值的事件
+- 掌握枚举类库的使用
+
