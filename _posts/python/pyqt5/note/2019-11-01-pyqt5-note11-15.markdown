@@ -197,3 +197,87 @@ tags: Python solution basis PyQt5
 - 掌握滑块值的事件
 - 掌握枚举类库的使用
 
+  
+# PyQt5的第十五课 - PyQt5进度条QProgressBar应用
+
+### 知识回顾
+
+- 滑动控件qslider
+- 关键:设置最大值,最小值,绝对范围
+- 核心类库QtCore,枚举类Qt
+
+### 进度条qprogressbar
+
+使用思想:
+- 载入类库
+- 初始化对象
+- 设置最小值和最大值
+- 时钟的使用QBasicTimer,跟槽方法对应类库中的timeevent
+
+### 制作案例
+- 界面由进度条和按钮组成
+- 进度条的值范围为0-100
+- 按钮的状态为:"开始", "暂停","终止"
+- 按钮需要控制进度条进度
+
+### 导入时钟类库
+
+`from pyqt5.qtcore import qbasictimer`
+
+### 初始化进度条
+```python
+# 载入进度条
+self.pgb = QProgressBar(self) # 类对象的初始化
+self.pgb.move(50,50) # 将进度条移动到指定的位置
+self.pgb.resize(300,20) # 设置进度条宽高
+```
+
+### 设置进度条的范围
+```python
+self.pgb.setMinimum(0)  # 设置最小值
+self.pgb.setMaximum(100) # 设置最大值
+self.pgb.setValue(50)   # 设置当前进度
+```
+
+### 时钟控件
+- 做用:每搁多少时间执行一次时钟内部的代码
+- 时间单位:毫秒
+- 1秒 = 1000毫秒
+
+### QBasicTimer控价解析
+- isActive方法:返回时钟控件是否开启,如果开启返回true,否则为false
+- start方法:使得时钟控件开启来,需要传入时钟间隔,时间单位为毫秒
+- 简单的参数使用格式
+- start(时间,self)
+- stop方法:使得时钟控件关闭.
+- timerID方法:返回当前时钟控件的ID,主要用于多个时钟控件使用的时候,区分不同的时钟控件.
+- 对应的槽方法是Qwidget控件自带的timerEvent事件.
+- 时钟控件的每个多少时间要运行一次的代码就是在timerEvent方法中,我们在使用时钟控件的时候要重写这个方法
+
+### timerEvent方法
+
+```python
+# 声明一个时钟控件
+self.timer1 = QBasicTimer()
+# 开始计时
+self.timer1.start(1000,self)
+# 这玩意是系统带的,自动就调用它,默认1秒钟一次
+def timerEvent(self, e):
+    self.pv += 1
+    self.pgb.setValue(self.pv)   # 设置当前进度
+```
+
+### 时钟控件状态切断的核心代码
+```python
+if self.timer1.isActive():  # 检测是否开启
+        self.timer1.stop(50, self)
+        self.btn.setText("开始")  # 这里的按钮的状态显示的是按钮下次的行为
+    else:
+        self.timer1.start(50, self)
+        self.btn.setText("停止")
+```
+
+### 总结强调
+- 掌握Qprogressbar的控件的配置
+- 掌握时钟控件的基本使用QBasicTimer
+- 理解按钮控制时钟控件达到进度条的运行的思想.
