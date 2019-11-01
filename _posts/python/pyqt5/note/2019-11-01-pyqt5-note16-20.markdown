@@ -1,0 +1,150 @@
+---
+layout: post
+title: "PyQt5学习笔记16-20"
+date: 2019-11-01 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第十六课 - PyQt5载入图片QPixmap应用
+
+### 知识回顾
+
+- 进度条qprogressbar
+- 学会使用时钟控件QBasicTimer
+- 学会重写事件timerEvent
+
+### 案例:图片的载入与移除
+- 加入需要能够载入图片
+- 增加移除图片按钮和添加图片按钮
+- 当点击相应按钮后会有相应的功能
+
+### 最终图片的显示载体QLabel
+- 功能:
+- 显示文字
+- 显示图片,载入QPixmap
+- 默认情况下,label显示区域,是根据图片的大小进行显示的
+- 如果设置label大小的话,只会显示图片的部分裁剪区域
+- 使用方法:`lbl.setPixmap(图片实例化对象)`
+- `lbl.setPixmap(QPixmap("./img/th.jpg"))`
+- 如和让图片自适应qlabel标签的区域呢?
+### QPixmap类
+- 所在类库QtGUI
+- 导入
+from PyQt5.QtGui import Qpixmap
+
+- 实例化图片对象:
+- QPixmap(图片路径) 返回一个实例化图片对象
+
+### 总结强调
+- 掌握QPixmap载入图片对象与移除
+- 掌握通过QLabel来显示图片与自适应大小
+
+
+  
+# PyQt5的第十七课 - PyQt5下拉列表控件QComboBox
+说白了就像以前那个js的地址联动似的
+### 知识回顾
+
+- 掌握QPixmap图片对象
+- 掌握Qlabel控件装载图和调整图片
+
+### 下拉列表 combobox
+- 主要用于选择,比如省市联动选择
+- 必须要载入Qcombobox类
+- 实例化类为一个对象,对这个对象进行配置,实则就是对下拉列表的配置
+
+```python
+combox_1 = QComboBox(myframe1)
+combox_1.move(20,0)
+```        
+- 我们通过addItem来往combobox中装入项目.
+```python
+combox_1.addItem("请选择省份")
+combox_1.addItem("浙江")
+combox_1.addItem("江苏")
+combox_1.addItem("安徽")
+combox_1.addItem("北京")
+```
+- 我们通过addItem来王combobox中装入项目
+
+用到clear方法将所有项目进行清空
+
+
+### Combobox点击事件
+- 理解为激活actived信号.
+- 信号有两种传递方式
+- 第一种传递传递字符串,这个实则传递的是选择的文本
+`combox_1.activated[str].connect(self.myActived)`
+- 第二种:传递整型变量,这个传递的是选择的索引.索引默认从0开始
+- 第一项的索引是0,第二项的索引是1,依次类推
+- combo1.activated[int].connect(自定义槽方法)
+
+### 案例省市联动选择
+- 需要两个下拉列表
+- 点击第一个下拉列表后,会联动第二个列表中的内容
+
+### 扩展内容
+下拉列表框也可以进行输入,但是需要对方法进行配置
+配置setEditable为True:
+combo1.setEditable(True)
+
+### 总结强调
+- 掌握qcombobox的载入布局与项目加载
+- 掌握下拉列表的编辑和对应事件
+- 掌握联动的思想
+
+# PyQt5的第十八课 - PyQt5日历控件QCalendarWidget
+### 知识回顾
+
+- 掌握了QCombobox下拉框,载入,配置(可编辑,不可编辑)
+- 掌握联动的思想(省与市的联动),主要
+- 用到actived信号
+
+### 案例描述:日历控件的使用
+- 制造一个垂直布局(盒子模型)
+- 载入一个日历控件Qcalendarwidget和一个qlabel控件
+- 要求在点击日历控件的日期的时候,能够将获取到的日期显示到我们的label上
+
+### 步骤
+- 从库文件PyQt5.QtWidgets中导入日历控件
+- 对日历控件进行实例化
+- `cal = QCalendarWidget()`
+- 这里实例化的时候没有载入父容器,我们需要在后期将其载入父容器
+
+### 盒子模型
+
+- 盒子模型,垂直布局
+```python
+vlo = QVBoxLayout(self)
+vlo.addWidget(cal)
+```
+
+### 字体设置
+- 导入字体类
+- 对字体进行实例化,以及将实例化对象载入使用
+`lbl.setFont(QFont("华文行楷",20))`
+
+### 日期类型的载入
+- 从pyqt5的核心库中载入日期类Qdate
+- `from PyQt5.QtCore import QDate`
+- 默认的有实例的日期显示格式
+`PyQt5.QtCore.QDate(2019, 11, 15)`
+
+### 对日期进行格式化的技巧
+- 问题是在我们的槽方法中无法对日期进行代码提示,关键的技巧就是对参数重新格式化为QDate类型就可以了
+
+- 格式化日期使用toString方法来实现.
+- 实现的时候,我们有两种方法:
+- 方法一:使用y表示年的一位,M表示月,d表示日
+`self.lbl.setText(mydate.toString("yyyy-MM-dd"))`
+- 方法二:使用系统中的已经定义好的方式
+- 这种方式,已经定义好的枚举类
+`self.lbl.setText(mydate.toString(1))`或者`self.lbl.setText(mydate.toString(Qt.ISODate))`
+
+### 总结强调
+- 掌握日历控件QCalendarWidget的载入与配置.
+- 掌握日历控件的信号控制
+- 掌握日期格式化的几种方法.
+
+
