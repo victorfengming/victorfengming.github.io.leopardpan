@@ -148,3 +148,73 @@ vlo.addWidget(cal)
 - 掌握日期格式化的几种方法.
 
 
+
+# PyQt5的第十久课 - PyQt5菜单menu应用,新建多窗口
+### 知识回顾
+
+- 掌握日历控件QCalendarWidget
+- 
+
+### 案例:菜单
+- 新建第一窗体
+- 一级菜单的配置
+- 二级菜单的配置
+- 利用菜单功能实现界面跳转实现温馨提示
+
+
+### 开发思路
+- 导入类QMainWindow
+- 使用Qmenu菜单类,这个菜单我们可以从窗体本身的方法进行获取
+- 利用好Qmeun的功能,来实现多级菜单addAtion这是一个直接产生点击事件的行为
+也可以用addMenu功能来增加子菜单
+- 每次都要弹出新窗体,这个新窗体,我们要制作成全局的窗体
+- 使用QMessagebox 来实现一个简单的帮助
+
+
+### 一个空的模板
+```python
+import sys
+
+
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QCalendarWidget, QLabel, QVBoxLayout, QApplication, QWidget
+from PyQt5.QtCore import QDate, Qt
+
+
+class MyClass(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+
+    def initUI(self):
+        self.setWindowTitle("liujinr")
+        self.setGeometry(300,100,400,300)
+
+
+        self.show()
+
+```
+### 载入菜单的简单功能
+```python
+my_menu = self.menuBar()
+my_menu.addAction("新建")
+my_menu.addAction("运行")
+my_menu.addAction("调试")
+my_menu.addAction("帮助")
+```
+### 子菜单的书写
+- 这里要注意,直接将子菜单写在父菜单的下方
+- 这样的好处,更多的也可以帮助我们进行二次理解
+- 子菜单的添加,通过addMenu功能
+
+### 子菜单的核心代码
+```python
+my_menu = self.menuBar()
+        file_menu = my_menu.addMenu("文件")
+        file_menu.addAction('新建')
+        recent_file = file_menu.addMenu("最近的")
+        recent_file.addAction("文件1")
+        recent_file.addAction("文件2")
+# 这里注意,子菜单的写法,一级一级下来的
+```
