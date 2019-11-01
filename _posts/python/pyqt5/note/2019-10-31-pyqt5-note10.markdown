@@ -1,0 +1,27 @@
+---
+layout: post
+title: "PyQt5学习笔记10"
+date: 2019-11-01 
+tags: Python solution basis PyQt5
+---
+
+  
+# PyQt5的第时课 - PyQt5网格布局QGridLayout
+
+### 知识回顾
+
+- 掌握QHboxLayout水平盒子布局
+- 掌握QVboxLayout垂直盒子布局
+- 盒子布局,我们可以结合自带的"弹簧功能"addstrach
+- LineEdit类库作用:单行文本框
+
+### 网格布局
+
+<table>
+    <tr>
+        <td>0,0</td><td>0,1</td>
+    </tr>
+    <tr>
+        <td>1,0</td><td>1,0</td>
+    </tr>
+</table>
