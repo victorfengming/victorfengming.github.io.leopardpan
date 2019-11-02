@@ -324,3 +324,22 @@ app.exec_()
 ```
 
 
+### UI文件生成demo01模块（主窗口）
+`test.py`代码如下:
+```python
+import sys
+from PyQt5.QtWidgets import *
+# 导入生成的 py模块
+from demo01 import *
+# 创建app
+app = QApplication(sys.argv)
+# 实例化主窗口对象
+w = QMainWindow()
+# 实例化并调用初始化方法
+Ui_MainWindow().setupUi(w)
+# 显示窗口
+w.show()
+sys.exit(app.exec_())
+pass
+
+```
