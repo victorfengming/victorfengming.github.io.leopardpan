@@ -5,6 +5,18 @@ date: 2019-09-08
 tags: Python solution Git 
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 普通的方式
 刚刚学会git的你想要将你修改的code的文件push到远程仓库中的时候
 ```

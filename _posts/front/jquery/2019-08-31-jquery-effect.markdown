@@ -7,6 +7,18 @@ tags: JavaScript web basis jQuery
 
 
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ### jQuery 效果函数  
 
 <table class="dataintable">

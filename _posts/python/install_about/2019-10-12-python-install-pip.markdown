@@ -5,6 +5,18 @@ date: 2019-10-12
 tags: Python solution basis
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 起步
 
 <div class="article-intro">

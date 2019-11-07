@@ -5,6 +5,18 @@ date: 2019-08-19
 tags: Git solution 
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 1. 生成秘钥 
 $ `ssh-keygen -t rsa -C "fengming19981221@163.com" `
 按3个回车，密码为空这里一般不使用密钥。 

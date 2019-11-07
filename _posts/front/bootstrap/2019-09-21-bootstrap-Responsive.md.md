@@ -6,6 +6,18 @@ tags: web basis Bootstrap
 ---
 
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 什么是响应式 Web 设计
 响应式 Web 设计是一个让用户通过各种尺寸的设备浏览网站获得良好的视觉效果的方法。
 

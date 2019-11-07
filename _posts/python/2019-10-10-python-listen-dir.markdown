@@ -5,6 +5,18 @@ date: 2019-10-10
 tags: Python solution 
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 起步
 在python中文件监控主要有两个库，一个是[pyinotify](https://github.com/seb-m/pyinotify/wiki)，一个是[watchdog](http://pythonhosted.org/watchdog/)。pyinotify依赖于Linux平台的inotify，后者则对不同平台的的事件都进行了封装。因为我主要用于Windows平台，所以下面着重介绍watchdog（推荐大家阅读一下watchdog实现源码，有利于深刻的理解其中的原理）。
 watchdog在不同的平台使用不同的方法进行文件检测。在init.py中发现了如下注释：

@@ -7,6 +7,18 @@ tags: Python solution basis PyQt5 Socket
 
   
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ### 服务端
 ```python
 import socket

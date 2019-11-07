@@ -6,6 +6,18 @@ tags: JavaScript web basis jQuery
 ---
 
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### jQuery 事件方法
 事件方法会触发匹配元素的事件，或将函数绑定到所有匹配元素的某个事件。
 

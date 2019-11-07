@@ -6,6 +6,18 @@ tags: Python solution basis
 ---
 
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ### 起步
 很多小伙伴从网上找的图片可能图片尺寸与自己的需求不符合
 

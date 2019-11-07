@@ -5,6 +5,18 @@ date: 2019-08-30
 tags: Python background ubuntu
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 查看首先查看Python3默认版本:
 ```python
 victor@victor:/$ python3

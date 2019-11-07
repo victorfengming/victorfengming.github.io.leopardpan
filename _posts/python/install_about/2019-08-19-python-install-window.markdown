@@ -7,6 +7,18 @@ tags: Python background
 
 
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ### Windows 安装 Python 3
 目前Python有两个大版本，分别是 2.X 和 3.X ，我们的教程基于最新版本 3.6.1 首先我们需要获取Python的安装包，可以从官网获取，如果你因为没有VPN工具而无法访问官网的话，我已经将它放在网盘了，永久有效。
 从[Python官网](https://www.python.org/) or 从[网盘获取](https://pan.baidu.com/s/1eRYKVFs#list/path=/)

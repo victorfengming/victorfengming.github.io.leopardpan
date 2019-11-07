@@ -5,6 +5,18 @@ date: 2019-08-29
 tags: node background server basis
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 是不是在看其他的教程或者文档都比较乏味，本篇文章我们就是随意一点的聊聊node，话不多说，这就开始吧！  
 ### 什么是node.js
 这里跟大家说一下什么是nodejs  

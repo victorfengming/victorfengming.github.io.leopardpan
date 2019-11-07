@@ -6,6 +6,18 @@ tags: Python solution basis PyQt5
 ---
 
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 起步
 [PyQt5](https://pypi.org/project/PyQt5/)是一套绑定Qt5的应用程序框架。他在Python 2.x和3.x中都是可用的。该教程使用的是Python3.x。
 

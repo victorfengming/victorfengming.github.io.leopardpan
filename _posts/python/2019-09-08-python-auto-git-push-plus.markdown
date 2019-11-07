@@ -5,6 +5,18 @@ date: 2019-10-10
 tags: Python solution Git 
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 以前的简单版本
 通过python中的os模块操作系统命令  
 详情可参考:[Python实现一行代码推本地git到远程仓库](https://victorfengming.github.io/2019/09/python-auto-git-push/)

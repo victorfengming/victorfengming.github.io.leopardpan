@@ -5,6 +5,18 @@ date: 2019-08-29
 tags: Python background 
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 魔术方法
 <hr>
 <blockquote>

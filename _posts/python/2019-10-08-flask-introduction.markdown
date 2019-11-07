@@ -5,6 +5,18 @@ date: 2019-10-08
 tags: Python solution web flask
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 什么是Web Framework？
 Web Application Framework（Web应用程序框架）或简单的Web Framework（Web框架）表示一个库和模块的集合，使Web应用程序开发人员能够编写应用程序，而不必担心协议，线程管理等低级细节。
 

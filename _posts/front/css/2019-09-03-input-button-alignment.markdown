@@ -6,6 +6,18 @@ tags: css web solution
 ---
 
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ### 问题简析
 在html中,input标签和button经常一起使用,让用户输入一些内容  
 但是在默认的布局中,input标签和button标签会出现对不齐的现象  

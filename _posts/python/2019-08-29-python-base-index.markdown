@@ -5,6 +5,18 @@ date: 2019-08-29
 tags: Python background Index
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### python基础
 [python简介](https://blog.csdn.net/qq_40223983/article/details/95655323)    
 [python安装以及版本检测](https://blog.csdn.net/qq_40223983/article/details/95655470)    

@@ -5,6 +5,18 @@ date: 2019-09-05
 tags: JavaScript web solution
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 骨架
 ```html
 <!DOCTYPE html>

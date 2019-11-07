@@ -5,6 +5,18 @@ date: 2019-09-27
 tags: JavaScript web basis
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 有些小伙伴看我的博客中有自动跳转到其他博文的内容,感觉很厉害
 
 甚至有[同学](https://caoyang7.github.io/)感叹到:这也太好了吧!

@@ -5,6 +5,8 @@ date: 2019-09-16
 tags: web html basis
 ---
 
+
+
 `const`声明一个只读的常量。一旦声明，常量的值就不能改变。
 ```
 const PI = 3.1415;

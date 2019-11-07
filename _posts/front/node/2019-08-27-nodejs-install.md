@@ -6,6 +6,18 @@ tags: node background solution ubuntu
 ---
 
 
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
+
 ## nodejs安装
 推荐使用方法1进行安装
 ### 方法1：

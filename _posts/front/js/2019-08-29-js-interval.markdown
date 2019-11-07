@@ -7,6 +7,18 @@ tags: JavaScript web basis
 
 
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### js定时器的制作  
 在javascritp中，有两个关于定时器的专用函数，分别为：
 ```

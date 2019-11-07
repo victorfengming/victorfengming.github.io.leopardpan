@@ -5,6 +5,18 @@ date: 2019-10-27
 tags: Python solution basis
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 一、jupyter 起步:简介
 Jupyter Notebook是一个开源的Web应用程序，允许用户创建和共享包含代码、方程式、可视化和文本的文档。它的用途包括：数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等等。它具有以下优势：
 

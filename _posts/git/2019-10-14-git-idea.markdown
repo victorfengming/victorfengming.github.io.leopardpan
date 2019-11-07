@@ -5,6 +5,18 @@ date: 2019-10-14
 tags: Git solution idea
 ---
 
+
+
+
+
+* content
+{:toc}
+
+
+
+
+
+
 ### 起步
 idea是十分智能的Java集成开发环境
 
