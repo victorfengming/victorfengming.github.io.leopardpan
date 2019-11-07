@@ -1,0 +1,49 @@
+---  
+layout: post  
+title: 'JDBC笔记01'  
+date: 2019-11-08  
+tags: Java basis note JDBC
+---  
+  
+  
+* content  
+{:toc}  
+  
+  
+  
+  
+### 学习目标  
+- 理解JDBC原理
+- 掌握Connection接口的使用
+- 掌握Statement接口的使用
+- 掌握ResultSet接口的使用
+- 掌握PreparedStatement接口的使用
+- 掌握Properties类与配置文件的使用
+
+### JDBC 概念
+JDBC  (Java DataBase Connectivity)
+Java数据库连接技术的简称，提供连接各种常用数据库的能力
+
+![jdbc2server](/images/posts/java/JDBC/jdbc1.png)
+
+### JDBC的工作原理
+
+![jdbc2server](/images/posts/java/JDBC/jdbc2.png)
+```html
+JDBC API
+提供者：Sun公司
+内容：供程序员调用的接口与类
+DriverManager
+提供者：Sun公司
+作用：管理各种不同的JDBC驱动
+ JDBC 驱动
+提供者：数据库厂商
+作用：负责连接各种不同的数据库
+```
+
+### Java方式连接数据库
+![jdbc2server](/images/posts/java/JDBC/jdbc3.png)
+
+### IDEA导入JDBC驱动的jar包
+
+https://blog.csdn.net/SSY_1992/article/details/88344709
