@@ -871,7 +871,7 @@ sys.exit(app.exec_())
 
 
 
-### 加油,都看到一半了你!!!
+加油,都看到一半了你!!!
 ```python
 
 '''
@@ -1969,9 +1969,8 @@ if __name__ == '__main__':
 ```
 
 
-# 自定义组件
 
-### 39
+# 39自定义组件
 ```python
 
 from PyQt5.QtWidgets import (QWidget, QSlider, QApplication,
@@ -2118,7 +2117,7 @@ if __name__ == '__main__':
 
 
 
-### 终于翻到底部了,能看到这里,给你自己一个奖励吧!!!
+终于翻到底部了,能看到这里,给你自己一个奖励吧!!!
 ```python
 
 '''
