@@ -23,6 +23,40 @@ tags: Java basis note JDBC
 ### JDBC 概念
 JDBC  (Java DataBase Connectivity)
 Java数据库连接技术的简称，提供连接各种常用数据库的能力
+说白了就是java语言连接数据库
+```
+有一个程序员,他要写一套程序,但是他不知道公司用什么数据库
+
+所以,他就得学java连mysql连Oracle,连DB2,
+市面上所有的关系型数据库,他都得学习一遍,对吧!
+
+而我们期望使用统一的一套Java代码可以操作所有的关系型数据库
+有一个程序员终于忍不住了,写了个JDBC
+JDBC:定义了操作所有关系型数据库的规则(接口)
+
+这里只是写了接口,但是没有写具体的实现类,那么这个实现类谁写呢
+
+sun公司说了,每一个数据库的厂商你们自己写实现类
+所以每个数据库厂商都写了不同的实现类,不同版本的实现类
+
+我们给这个实现类起了个名字,叫做数据库驱动
+
+```
+
+JDBC本质:其实就是官方(Sun公司)定义的一套操作所有关系型数据库的规则,及接口.
+各个数据库厂商去实现这套接口,提供数据库驱动jar包.我们可以使用这套接口(JDBC)编程,真正执行的代码是驱动jar包中的实现类.
+
+### JDBC快速入门
+#### 步骤:
+1. 导入驱动jar包
+2. 注册驱动
+3. 获取数据库的连接对象
+4. 定义sql
+5. 获取执行sql语句的对象 statement
+6. 执行sql,接收返回结果
+7. 处理结果
+8. 释放资源
+
 
 ![jdbc2server](/images/posts/java/JDBC/jdbc1.png)
 
@@ -42,8 +76,61 @@ DriverManager
 ```
 
 ### Java方式连接数据库
+
 ![jdbc2server](/images/posts/java/JDBC/jdbc3.png)
 
 ### IDEA导入JDBC驱动的jar包
 
 https://blog.csdn.net/SSY_1992/article/details/88344709
+### 读取配置文件
+Java中提供了Properties类来读取配置文件
+
+```java
+public class DB{
+	//省略变量定义代码……	
+	static{//静态代码块中调用，类加载时执行
+
+		Properties pp=new Properties();
+
+		InputStream is=DB.class.getClassLoader().getResourceAsStream("db.properties");
+            //加载配置文件到输入流中
+
+		try {
+			pp.load(is);
+            //从输入流中读取属性列表
+			driver=pp.getProperty("driver");
+			url=pp.getProperty("url");
+            //根据指定的键获取对应的值
+			user=pp.getProperty("user");
+			password=pp.getProperty("password");
+
+		} catch (IOException e) {//….}
+		} //省略其他方法代码……}
+```
+### JDBC总结
+
+#### 访问数据常用类和接口
+- DriverManager ：管理JDBC驱动
+- Connection ：连接数据库并传送数据 
+- Statement ：负责执行SQL语句
+- ResultSet：负责保存Statement执行后所产生的查询结果
+
+
+#### 访问数据库的步骤
+1. 加载JDBC驱动
+2. 与数据库建立连接
+3. 创建PreparedStatement对象发送SQL语句,并返回结果
+4. 处理返回结果
+5. 释放资源
+
+
+#### 注意事项
+遍历结果集中数据可使用列号或列名标识列
+
+PreparedStatement比Statement提高了代码安全性,可读性,可维护性
+
+#### properties
+properties文件，以键值对的方式存储配置信息
+
+properties类读取配置文件
+
