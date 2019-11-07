@@ -8,6 +8,11 @@ tags: Java basis note
 # 今天内容：
    1.兄弟连在线考试系统
 
+### 具体实现代码
+去github看吧:https://github.com/victorfengming/xdl_exam_system
+
+感觉有用的可以给小编点个`star`
+
 ### 1.1 软件开发的流程
 ```
    需求分析文档 => 概要设计文档 => 详细设计文档  => 编码和测试
@@ -45,6 +50,8 @@ tags: Java basis note
    
 每次在发送必要的数据时，还要发送代表客户所选择功能的类型
        要求使用String类型
+       
+       
 
 
 
