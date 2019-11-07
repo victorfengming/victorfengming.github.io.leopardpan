@@ -5,6 +5,14 @@ date: 2019-10-29
 tags: Java basis note 
 ---
 
+
+* content
+{:toc}
+
+
+
+
+
 ### 主要内容
 - 自定义函数式接口
 - 函数式编程
