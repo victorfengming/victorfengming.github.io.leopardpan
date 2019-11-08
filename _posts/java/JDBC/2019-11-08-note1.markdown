@@ -153,11 +153,38 @@ public class JdbcDemo01 {
             - 返回值: 执行语句后,所影响的行数,我们可以通过这个影响的行数判断DML语句是否执行成功,要是大于0就成功了呗,反之,则失败.
         - `ResultSet executeQuery(String sql)`: 执行`DQL(select)`语句
     - 练习:
+
+4. `ResultSet`：结果集对象,负责保存Statement执行后所产生的查询结果
+    - `next()`:
+        - 游标向下移动一行
+        - 并且判断当前行是否是最后一行的末尾
+        - 返回`boolean`,如果有数据返回true,反之亦然!
+    - `getXxx(参数)`:获取数据
+        - Xxx:代表数据类型 如:`int getInt(), String getString()`
+        - 参数:
+            - `int`: 代表列的编号, 从1开始 如`getString(1)`
+            - `String`: 代表列名称. 如: `getDouble("balance")`
+    - 注意:
+        - 使用步骤:
+            1. 游标向下移动一行
+            2. 判断是否有数据
+            3. 获取数据
+    - 练习:
+        - 定义一个方法,查询emp表的数据将其封装为对象,然后装载集合,返回.
+            - 定义`Emp`类 用于封装`Emp`表数据的`JavaBean`
+            - 定义方法 `public List<Emp> findAll(){}`
+            - 实现方法 `select * from emp;`
+5. `PreparedStatement` : 执行`sql`的对象,用于负责执行`SQL`语句
+
+
+
+
+# 附录(源代码)
+   
 - `account`表 添加一条记录  
+
 ```java
-
 Statement stmt = null;
-
 try {
     // 1.注册驱动
     // 这行不写也行
@@ -343,128 +370,10 @@ try {
     }
 }
 ```
-4. `ResultSet`：结果集对象,负责保存Statement执行后所产生的查询结果
-    - `next()`:
-        - 游标向下移动一行
-        - 并且判断当前行是否是最后一行的末尾
-        - 返回`boolean`,如果有数据返回true,反之亦然!
-    - `getXxx(参数)`:获取数据
-        - Xxx:代表数据类型 如:`int getInt(), String getString()`
-        - 参数:
-            - `int`: 代表列的编号, 从1开始 如`getString(1)`
-            - `String`: 代表列名称. 如: `getDouble("balance")`
-    - 注意:
-        - 使用步骤:
-            1. 游标向下移动一行
-            2. 判断是否有数据
-            3. 获取数据
-    - 练习:
-        - 定义一个方法,查询emp表的数据将其封装为对象,然后装载集合,返回.
-            - 定义`Emp`类 用于封装`Emp`表数据的`JavaBean`
-            - 定义方法 `public List<Emp> findAll(){}`
-            - 实现方法 `select * from emp;`
-5. `PreparedStatement` : 执行`sql`的对象,用于负责执行`SQL`语句
 
 
+### 附录II 示意图
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### JDBC的工作原理
-
-```html
-JDBC API
-提供者：Sun公司
-内容：供程序员调用的接口与类
-DriverManager
-提供者：Sun公司
-作用：管理各种不同的JDBC驱动
- JDBC 驱动
-提供者：数据库厂商
-作用：负责连接各种不同的数据库
-```
-
-### Java方式连接数据库
-
-![jdbc2server](/images/posts/java/JDBC/jdbc3.png)
-
-### IDEA导入JDBC驱动的jar包
-
-https://blog.csdn.net/SSY_1992/article/details/88344709
-### 读取配置文件
-Java中提供了Properties类来读取配置文件
-
-```java
-public class DB{
-	//省略变量定义代码……	
-	static{//静态代码块中调用，类加载时执行
-
-		Properties pp=new Properties();
-
-		InputStream is=DB.class.getClassLoader().getResourceAsStream("db.properties");
-            //加载配置文件到输入流中
-
-		try {
-			pp.load(is);
-            //从输入流中读取属性列表
-			driver=pp.getProperty("driver");
-			url=pp.getProperty("url");
-            //根据指定的键获取对应的值
-			user=pp.getProperty("user");
-			password=pp.getProperty("password");
-
-		} catch (IOException e) {//….}
-		} //省略其他方法代码……}
-```
-### JDBC总结
-
-#### 访问数据常用类和接口
-
-
-
-#### 访问数据库的步骤
-1. 加载JDBC驱动
-2. 与数据库建立连接
-3. 创建PreparedStatement对象发送SQL语句,并返回结果
-4. 处理返回结果
-5. 释放资源
-
-
-#### 注意事项
-遍历结果集中数据可使用列号或列名标识列
-
-PreparedStatement比Statement提高了代码安全性,可读性,可维护性
-
-#### properties
-properties文件，以键值对的方式存储配置信息
-
-properties类读取配置文件
-
+<img src="/images/posts/java/JDBC/jdbc1.png" >  
+<img src="/images/posts/java/JDBC/jdbc2.png" >  
+<img src="/images/posts/java/JDBC/jdbc3.png" >  
