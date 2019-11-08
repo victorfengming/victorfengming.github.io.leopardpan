@@ -13,15 +13,15 @@ tags: Java basis note JDBC
   
   
 ### 学习目标  
-- 理解JDBC原理
-- 掌握Connection接口的使用
-- 掌握Statement接口的使用
-- 掌握ResultSet接口的使用
-- 掌握PreparedStatement接口的使用
-- 掌握Properties类与配置文件的使用
+- [ ] 理解`JDBC`原理
+- [ ] 掌握`Connection`接口的使用
+- [ ] 掌握`Statement`接口的使用
+- [ ] 掌握`ResultSet`接口的使用
+- [ ] 掌握`PreparedStatement`接口的使用
+- [ ] 掌握`Properties`类与配置文件的使用
 
 ### JDBC 概念
-JDBC  (Java DataBase Connectivity)
+JDBC  (`Java DataBase Connectivity`)
 Java数据库连接技术的简称，提供连接各种常用数据库的能力
 说白了就是java语言连接数据库
 ```
@@ -43,21 +43,21 @@ sun公司说了,每一个数据库的厂商你们自己写实现类
 
 ```
 
-JDBC本质:其实就是官方(Sun公司)定义的一套操作所有关系型数据库的规则,及接口.
-各个数据库厂商去实现这套接口,提供数据库驱动jar包.我们可以使用这套接口(JDBC)编程,真正执行的代码是驱动jar包中的实现类.
+`JDBC`本质:其实就是官方(`Sun`公司)定义的一套操作所有关系型数据库的规则,及接口.
+各个数据库厂商去实现这套接口,提供数据库驱动`jar`包.我们可以使用这套接口(`JDBC`)编程,真正执行的代码是驱动`jar`包中的实现类.
 
-## JDBC快速入门
+## `JDBC`快速入门
 ### 步骤:
-1. 导入驱动jar包
-    官网mysql驱动jar包下载地址:[mysql/mysql-connector-java](http://central.maven.org/maven2/mysql/mysql-connector-java/)
-    1. 复制mysql-connector-java-5.1.37.jar
-    2. 右键-->Add as library
+1. 导入驱动`jar`包
+    官网`mysql`驱动`jar`包下载地址:[mysql/mysql-connector-java](http://central.maven.org/maven2/mysql/mysql-connector-java/)
+    1. 复制`mysql-connector-java-5.1.37.jar`
+    2. 右键-->`Add as library`
     
 2. 注册驱动
 3. 获取数据库的连接对象
-4. 定义sql
-5. 获取执行sql语句的对象 statement
-6. 执行sql,接收返回结果
+4. 定义`sql`
+5. 获取执行`sql`语句的对象 `statement`
+6. 执行`sql`,接收返回结果
 7. 处理结果
 8. 释放资源
 
@@ -104,14 +104,14 @@ public class JdbcDemo01 {
 ```
 
 ### 详解各个对象
-- DriverManager ：  
-    驱动管理对象,用于管理JDBC驱动
+- `DriverManager` ：  
+    驱动管理对象,用于管理`JDBC`驱动
     * 功能:
         1. 注册驱动  
             1. 注册与给定的驱动程序`static void registerDriver(Driver driver)`  
             2. 写代码使用:  
                 1. `Class.forName("com.mysql.jdbc.Driver");`好像这个类中有一个静态代码块,这里面有现成的代码
-                2. 通过查看源码发现:在com.mysql.jdbc.Driver类中存在静态代码块
+                2. 通过查看源码发现:在`com.mysql.jdbc.Driver`类中存在静态代码块
                 ```java
                static {
                         try {
@@ -131,22 +131,239 @@ public class JdbcDemo01 {
                 - `url`:指定连接的路径
                     - 语法:`jdbc:mysql://ip地址(域名):端口号/数据库名称`
                     - 例子:`jdbc:mysql://localhost:3306/plan`
-                    - 细节:如果连接的是本机的mysql服务器,并且mysql服务器默认端口是3306,则url可以简写为:jdbc:mysql///数据库名称
+                    - 细节:如果连接的是本机的`mysql`服务器,并且mysql服务器默认端口是3306,则url可以简写为`:jdbc:mysql///数据库名称`
                     - 例如:`Connection conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");`
-                - user:用户名
-                - password:密码
-2. Connection ：数据库连接对象,用于连接数据库并传送数据 
+                - `user`:用户名
+                - `password`:密码
+2. `Connection` ：数据库连接对象,用于连接数据库并传送数据 
     1. 功能:
-        1. 获取执行sql的对象
+        1. 获取执行`sql`的对象
             - `Statement createStatement`
             - `PreparedStatement prepareStatement(String sql)`
         2. 管理事务:
-            - 开启事务: setAutoCommit(boolean autoCommit): 调用改方法设置参数为false,就开启事务啦,哈哈
-            - 提交事务: commit()        
-            - 回滚事务: rollback()    
-- Statement ：执行sql的对象,负责执行SQL语句
-- ResultSet：结果集对象,负责保存Statement执行后所产生的查询结果
-- PreparedStatement : 执行sql的对象,用于负责执行SQL语句
+            - 开启事务: `setAutoCommit(boolean autoCommit)`: 调用改方法设置参数为`false`,就开启事务啦,哈哈
+            - 提交事务: `commit()`
+            - 回滚事务: `rollback()`    
+3. `Statement` ：执行`sql`的对象,负责执行`SQL`语句
+    - 执行`sql`
+        - `boolean execute(String sql)` :可以执行任意的`sql`,可能会返回多个结果!(了解即可)
+        - `int executeUpdate(String sql)`:        
+            - 执行`DML(insert,update,delete)`语句,`DDL(create,alter,drop)`语句
+            - 这个`DDL`不经常用,所有在这个地方我们都是用前者的
+            - 返回值: 执行语句后,所影响的行数,我们可以通过这个影响的行数判断DML语句是否执行成功,要是大于0就成功了呗,反之,则失败.
+        - `ResultSet executeQuery(String sql)`: 执行`DQL(select)`语句
+    - 练习:
+        - `account`表 添加一条记录  
+        ```java
+       Statement stmt = null;
+
+        try {
+            // 1.注册驱动
+            // 这行不写也行
+            //  Class.forName("com.mysql.jdbc.Driver");
+            // 2. 定义sql
+            //  String sql = "insert into account values(null,'ttk',6299)";
+            String sql = "insert into account values(null,'yupeng',5666)";
+            // 获取Connection对象
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql:///plan", "root", "");
+            // 4获取执行sql对象 Statement
+            stmt = conn.createStatement();
+            // 5 执行sql
+            int count = stmt.executeUpdate(sql);
+            // count影响的行数
+            // 6.处理结果
+            System.out.println(count);
+            if (count > 0) {
+                System.out.println("提交成功");
+
+            } else {
+                System.out.println("添加失败");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 释放资源
+            // 为了避免空指针异常需要判断
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        ```
+        - `account`表 删除一条记录  
+        ```java
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // 1.注册表
+            // 2.获取连接对象
+            conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");
+            // 3. 定义sql
+            String sql = "delete from account where id = 4";
+            // 4.获取执行sql对象
+            stmt = conn.createStatement();
+            // 5.执行sql
+            int count = stmt.executeUpdate(sql);
+            // 6.处理结果
+            if (count > 0) {
+                System.out.println("运行成功");
+            } else {
+                System.out.println("失败了!");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            // 7. 释放资源
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        ```
+        
+        - `account`表 修改一条记录  
+        ```java
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // 1.注册表
+            // 2.获取连接对象
+            conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");
+            // 3. 定义sql
+            String sql = "update account set balance = 6060 where id = 2";
+            // 4.获取执行sql对象
+            stmt = conn.createStatement();
+            // 5.执行sql
+            int count = stmt.executeUpdate(sql);
+            // 6.处理结果
+            if (count > 0) {
+                System.out.println("运行成功");
+            } else {
+                System.out.println("失败了!");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            // 7. 释放资源
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        ```
+        - `DDl`: 创建一个表  
+        ```java
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // 1.注册表
+            // 2.获取连接对象
+            conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");
+            // 3. 定义sql
+            String sql = "create table student (id int ,name varchar(20))";
+            // 4.获取执行sql对象
+            stmt = conn.createStatement();
+            // 5.执行sql
+            int count = stmt.executeUpdate(sql);
+            // 6.处理结果
+            if (count > 0) {
+                System.out.println("运行成功");
+            } else {
+                System.out.println("失败了!");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            // 7. 释放资源
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        ```
+        - `account`表 查询一条记录  
+        ```java
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            // 1.注册表
+            // 2.获取连接对象
+            conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");
+            // 3. 定义sql
+            String sql = "select * from account";
+            // 4.获取执行sql对象
+            stmt = conn.createStatement();
+            // 5.执行sql
+            rs = stmt.executeQuery(sql);
+            // 6.处理结果
+            // 6.1 让游标向下移动一行
+
+            rs.next();
+            //            获取数据
+            int id = rs.getInt(1);
+            String name = rs.getString("name");
+            double balance = rs.getDouble(3);
+            System.out.println(id + "---" + name + "---" + balance);
+           rs.next();
+            //            获取数据
+            int id2 = rs.getInt(1);
+            String name2 = rs.getString("name");
+            double balance2 = rs.getDouble(3);
+            System.out.println(id2 + "---" + name2 + "---" + balance2);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            // 7. 释放资源
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        ```
+4. `ResultSet`：结果集对象,负责保存Statement执行后所产生的查询结果
+    - `next()`:
+        - 游标向下移动一行
+        - 并且判断当前行是否是最后一行的末尾
+        - 返回`boolean`,如果有数据返回true,反之亦然!
+    - `getXxx(参数)`:获取数据
+        - Xxx:代表数据类型 如:`int getInt(), String getString()`
+        - 参数:
+            - `int`: 代表列的编号, 从1开始 如`getString(1)`
+            - `String`: 代表列名称. 如: `getDouble("balance")`
+    - 注意:
+        - 使用步骤:
+            1. 游标向下移动一行
+            2. 判断是否有数据
+            3. 获取数据
+    - 练习:
+        - 定义一个方法,查询emp表的数据将其封装为对象,然后装载集合,返回.
+            - 定义`Emp`类 用于封装`Emp`表数据的`JavaBean`
+            - 定义方法 `public List<Emp> findAll(){}`
+            - 实现方法 `select * from emp;`
+5. `PreparedStatement` : 执行`sql`的对象,用于负责执行`SQL`语句
+
 
 
 
