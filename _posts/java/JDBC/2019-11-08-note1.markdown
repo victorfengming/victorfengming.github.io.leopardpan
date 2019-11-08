@@ -181,7 +181,7 @@ public class JdbcDemo01 {
 
 # 附录(源代码)
    
-- `account`表 添加一条记录  
+### `account`表 添加一条记录  
 
 ```java
 Statement stmt = null;
@@ -223,7 +223,11 @@ try {
     }
 }
 ```
-- `account`表 删除一条记录  
+
+
+### `account`表 删除一条记录  
+
+
 ```java
 Connection conn = null;
 Statement stmt = null;
@@ -257,8 +261,11 @@ try {
     }
 }
 ```
+ 
         
-- `account`表 修改一条记录  
+### `account`表 修改一条记录  
+
+
 ```java
 Connection conn = null;
 Statement stmt = null;
@@ -292,7 +299,11 @@ try {
     }
 }
 ```
-- `DDl`: 创建一个表  
+
+
+### `DDl`: 创建一个表  
+
+
 ```java
 Connection conn = null;
 Statement stmt = null;
@@ -326,7 +337,11 @@ try {
     }
 }
 ```
-- `account`表 查询一条记录  
+
+
+### `account`表 查询一条记录  
+
+
 ```java
 Connection conn = null;
 Statement stmt = null;
@@ -374,6 +389,6 @@ try {
 
 ### 附录II 示意图
 
-<img src="/images/posts/java/JDBC/jdbc1.png" >  
-<img src="/images/posts/java/JDBC/jdbc2.png" >  
-<img src="/images/posts/java/JDBC/jdbc3.png" >  
+<img src="/images/posts/java/jdbc/jdbc1.png"  alt="">  
+<img src="/images/posts/java/jdbc/jdbc2.png"  alt="">  
+<img src="/images/posts/java/jdbc/jdbc3.png"  alt="">  
