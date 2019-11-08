@@ -121,8 +121,25 @@ public class JdbcDemo01 {
                         }
                     }
                 ```
-        2. 获取数据库连接
-- Connection ：数据库连接对象,用于连接数据库并传送数据 
+            3. 补充:
+                - 在`mysql-connector-java-5.1.37.jar` 的`5`版本之后 
+                - 有一个文件在`mysql-connector-java-5.1.37.jar/META-INF/services/java.sql.Driver`里面
+                - 这个文件可以让你省略注册驱动的步骤,好吧!
+        2. 获取数据库连接:
+            - 方法:`static Connection getConnection(String url,String user,String password)`
+            - 参数:
+                - `url`:指定连接的路径
+                    - 语法:`jdbc:mysql://ip地址(域名):端口号/数据库名称`
+                    - 例子:`jdbc:mysql://localhost:3306/plan`
+                    - 细节:如果连接的是本机的mysql服务器,并且mysql服务器默认端口是3306,则url可以简写为:jdbc:mysql///数据库名称
+                    - 例如:`Connection conn = DriverManager.getConnection("jdbc:mysql:///plan","root","");`
+                - user:用户名
+                - password:密码
+2. Connection ：数据库连接对象,用于连接数据库并传送数据 
+    1. 功能:
+        1. 获取执行sql的对象
+            - Statement createStatement
+            - PreparedStatement prepareStatement(String sql)
 - Statement ：执行sql的对象,负责执行SQL语句
 - ResultSet：结果集对象,负责保存Statement执行后所产生的查询结果
 - PreparedStatement : 执行sql的对象,用于负责执行SQL语句
@@ -151,11 +168,9 @@ public class JdbcDemo01 {
 
 
 
-![jdbc2server](/images/posts/java/JDBC/jdbc1.png)
 
 ### JDBC的工作原理
 
-![jdbc2server](/images/posts/java/JDBC/jdbc2.png)
 ```html
 JDBC API
 提供者：Sun公司
