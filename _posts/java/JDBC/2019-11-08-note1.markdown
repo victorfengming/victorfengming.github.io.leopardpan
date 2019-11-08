@@ -138,8 +138,12 @@ public class JdbcDemo01 {
 2. Connection ：数据库连接对象,用于连接数据库并传送数据 
     1. 功能:
         1. 获取执行sql的对象
-            - Statement createStatement
-            - PreparedStatement prepareStatement(String sql)
+            - `Statement createStatement`
+            - `PreparedStatement prepareStatement(String sql)`
+        2. 管理事务:
+            - 开启事务: setAutoCommit(boolean autoCommit): 调用改方法设置参数为false,就开启事务啦,哈哈
+            - 提交事务: commit()        
+            - 回滚事务: rollback()    
 - Statement ：执行sql的对象,负责执行SQL语句
 - ResultSet：结果集对象,负责保存Statement执行后所产生的查询结果
 - PreparedStatement : 执行sql的对象,用于负责执行SQL语句
