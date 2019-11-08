@@ -46,9 +46,13 @@ sun公司说了,每一个数据库的厂商你们自己写实现类
 JDBC本质:其实就是官方(Sun公司)定义的一套操作所有关系型数据库的规则,及接口.
 各个数据库厂商去实现这套接口,提供数据库驱动jar包.我们可以使用这套接口(JDBC)编程,真正执行的代码是驱动jar包中的实现类.
 
-### JDBC快速入门
-#### 步骤:
+## JDBC快速入门
+### 步骤:
 1. 导入驱动jar包
+    官网mysql驱动jar包下载地址:[mysql/mysql-connector-java](http://central.maven.org/maven2/mysql/mysql-connector-java/)
+    1. 复制mysql-connector-java-5.1.37.jar
+    2. 右键-->Add as library
+    
 2. 注册驱动
 3. 获取数据库的连接对象
 4. 定义sql
@@ -56,6 +60,102 @@ JDBC本质:其实就是官方(Sun公司)定义的一套操作所有关系型数�
 6. 执行sql,接收返回结果
 7. 处理结果
 8. 释放资源
+
+### 实例代码
+```java
+package cn.itcast.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+/**
+ * @author victor
+ * @site https://victorfengming.github.io/
+ * @company XDL
+ * @project itcast
+ * @package cn.itcast.jdbc
+ * @created 2019-11-07 23:43
+ * @function ""
+ */
+public class JdbcDemo01 {
+
+    public static void main(String[] args) throws Exception {
+        // 1. 导入驱动jar包
+        // 2.注册驱动
+        Class.forName("com.mysql.jdbc.Driver");
+        // 3.获取数据库连接对象
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/plan","root","");
+
+        //4. 定义sql
+        String sql = "use plan";
+        //5. 获取执行sql语句的对象 statement
+        Statement stmt = conn.createStatement();
+        //6. 执行sql,接收返回结果
+        int count = stmt.executeUpdate(sql);
+        //7. 处理结果
+        System.out.println(count);
+        //8. 释放资源
+        stmt.clearBatch();
+        conn.close();
+    }
+}
+
+```
+
+### 详解各个对象
+- DriverManager ：  
+    驱动管理对象,用于管理JDBC驱动
+    * 功能:
+        1. 注册驱动  
+            注册与给定的驱动程序  
+                `static void registerDriver(Driver driver)`  
+            写代码使用:  
+                `Class.forName("com.mysql.jdbc.Driver");`
+                好像这个类中有一个静态代码块,这里面有现成的代码
+                通过查看源码发现:在com.mysql.jdbc.Driver类中存在静态代码块
+                
+                ```java
+                static {
+                        try {
+                            DriverManager.registerDriver(new Driver());
+                        } catch (SQLException var1) {
+                            throw new RuntimeException("Can't register driver!");
+                        }
+                    }
+                ```
+                
+                
+                
+                
+        2. 获取数据库连接
+- Connection ：数据库连接对象,用于连接数据库并传送数据 
+- Statement ：执行sql的对象,负责执行SQL语句
+- ResultSet：结果集对象,负责保存Statement执行后所产生的查询结果
+- PreparedStatement : 执行sql的对象,用于负责执行SQL语句
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ![jdbc2server](/images/posts/java/JDBC/jdbc1.png)
@@ -110,10 +210,7 @@ public class DB{
 ### JDBC总结
 
 #### 访问数据常用类和接口
-- DriverManager ：管理JDBC驱动
-- Connection ：连接数据库并传送数据 
-- Statement ：负责执行SQL语句
-- ResultSet：负责保存Statement执行后所产生的查询结果
+
 
 
 #### 访问数据库的步骤
