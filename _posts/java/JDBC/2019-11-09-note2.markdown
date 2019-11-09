@@ -1,7 +1,7 @@
 ---  
 layout: post  
-title: 'JDBC笔记'  
-date: 2019-11-08  
+title: 'JDBC笔记2'  
+date: 2019-11-09  
 tags: Java basis note JDBC
 ---  
   
@@ -40,10 +40,13 @@ tags: Java basis note JDBC
     2. Druid: 数据库连接池实现技术,由阿里巴巴提供的(这玩意十分的高效,性能好,全球最好的数据库连接池技术!nb吧)        
 
 ### C3P0:数据库连接池技术
-- 步骤:
-    1. 导入jar包(两个) c3p0-0.9.5.2.jar mchange-commons-java-0.1.12.jar
-    2. 定义配置文件:
-        - 名称:-c3p0.properties 或者 c3p0-config.xml
-        - 路径:直接将文件放在src目录下即可.
-    3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
-    4. 获取连接:
+#### 步骤:
+1. 导入jar包(两个) 
+c3p0-0.9.5.2.jar 
+mchange-commons-java-0.1.12.jar
+不要忘记导入数据库的驱动jar包
+2. 定义配置文件:
+    - 名称:-c3p0.properties 或者 c3p0-config.xml
+    - 路径:直接将文件放在src目录下即可.
+3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
+4. 获取连接:
