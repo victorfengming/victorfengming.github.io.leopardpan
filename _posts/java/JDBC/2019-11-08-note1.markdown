@@ -212,7 +212,7 @@ public class JdbcDemo01 {
 
 
 
-##### - `next()`:
+##### `next()`:
 - 游标向下移动一行
 - 并且判断当前行是否是最后一行的末尾
 - 返回`boolean`,如果有数据返回true,反之亦然!
@@ -220,7 +220,7 @@ public class JdbcDemo01 {
 
 
 
-##### - `getXxx(参数)`:获取数据
+##### `getXxx(参数)`:获取数据
 - Xxx:代表数据类型 如:`int getInt(), String getString()`
 - 参数:
     - `int`: 代表列的编号, 从1开始 如`getString(1)`
