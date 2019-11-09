@@ -109,7 +109,6 @@ public class JdbcDemo01 {
         conn.close();
     }
 }
-
 ```
 
 
@@ -149,9 +148,9 @@ public class JdbcDemo01 {
 
 ##### 2. 获取数据库连接:
 
-- 方法:`static Connection getConnection(String url,String user,String password)`
+方法:`static Connection getConnection(String url,String user,String password)`
 
-- 参数:
+参数:
     - `url`:指定连接的路径
         - 语法:`jdbc:mysql://ip地址(域名):端口号/数据库名称`
         - 例子:`jdbc:mysql://localhost:3306/plan`
@@ -202,10 +201,7 @@ public class JdbcDemo01 {
 
 
 ##### 练习:见附录
-         
-
-
-
+     
 
 #### `ResultSet`：结果集对象,负责保存Statement执行后所产生的查询结果
 
@@ -230,19 +226,19 @@ public class JdbcDemo01 {
 
 
 ##### - 注意:
-- 使用步骤:
-    1. 游标向下移动一行
-    2. 判断是否有数据
-    3. 获取数据
+使用步骤:
+1. 游标向下移动一行
+2. 判断是否有数据
+3. 获取数据
 
 
 
 
 ##### - 练习:
-- 定义一个方法,查询emp表的数据将其封装为对象,然后装载集合,返回.
-    - 定义`Emp`类 用于封装`Emp`表数据的`JavaBean`
-    - 定义方法 `public List<Emp> findAll(){}`
-    - 实现方法 `select * from emp;`
+定义一个方法,查询emp表的数据将其封装为对象,然后装载集合,返回.
+- 定义`Emp`类 用于封装`Emp`表数据的`JavaBean`
+- 定义方法 `public List<Emp> findAll(){}`
+- 实现方法 `select * from emp;`
 
 
 
@@ -272,35 +268,35 @@ public class JdbcDemo01 {
 ##### 4. 使用步骤:
 
 
-###### 1. 导入驱动包
+1. 导入驱动包
 
 
-###### 2. 注册驱动
+2. 注册驱动
 
 
-###### 3. 获取数据库对象连接
+3. 获取数据库对象连接
 
 
-###### 4. 定义sql
+4. 定义sql
 - 注意:sql的参数使用?作为占位符.如:`select * from user where username = ? and password = ?;`
 
 
-###### 5. 获取执行sql语句的对象PreparedStatement Connection.prepareStatement(String sql)
+5. 获取执行sql语句的对象PreparedStatement Connection.prepareStatement(String sql)
 
 
-###### 6. 给? 赋值:
+6. 给? 赋值:
 - 方法: setXxx(参数1,参数2)
     - 参数1:?的位置编号 从1 开始
     - 参数2:?的值
 
 
-###### 6. 执行sql,接受返回结果,不需要传递sql语句
+6. 执行sql,接受返回结果,不需要传递sql语句
 
 
-###### 7. 处理结果
+7. 处理结果
 
 
-###### 8. 释放资源
+8. 释放资源
 
 
 
@@ -335,8 +331,8 @@ public class JdbcDemo01 {
 
 
 ##### 2. 抽取一个方法获取连接对象
-- 需求 : 不想传递参数(麻烦),还得保证工具类的通用性.
-- 解决 : 配置文件    jdbc.properties
+需求 : 不想传递参数(麻烦),还得保证工具类的通用性.
+解决 : 配置文件    jdbc.properties
 ```java
 url=jdbc:mysql:///plan
 user=root
@@ -362,7 +358,7 @@ driver=com.mysql.jdbc.Driver
 
 
 ##### - 步骤 :
-- 创建数据库表  user
+创建数据库表  user
 ```sql
 create table user(
     id int primary key auto_increment,
@@ -370,7 +366,7 @@ create table user(
     password varchar(32)
 );
 ```
-- 插入数据
+插入数据
 ```sql
 insert into user
 values (null,"victor","123");
