@@ -15,7 +15,6 @@ tags: Java basis note JDBC
 
 
 
-
 # 今日内容
 1. 数据库连接池
 2. Spring JDBC : JDBC Template
