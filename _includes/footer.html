@@ -13,6 +13,15 @@
           </li>
           {% endif %}
 
+          {% if site.social.qq %}
+          <!-- qq -->
+          <li class="navigation__item_social">
+            <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin={{site.social.qq}}&website=www.oicqzone.com" title="@{{site.social.qq}}" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/qq.png);"></div>
+            </a>
+          </li>
+
+          {% endif %}
           {% if site.social.zhihu %}
           <!-- Zhihu -->
           <li class="navigation__item_social">
