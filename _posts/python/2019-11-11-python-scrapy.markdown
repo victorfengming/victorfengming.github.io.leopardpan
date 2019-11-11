@@ -19,7 +19,7 @@ scrapy bench 如果成功了才代表真的安装成功,别的花里胡哨都没
 Scrapy Engine(引擎): 重中之重,负责  
   
 ### Scrapy结构图  
-![scrapy_structure](/images/posts/python/scrapy_structure.png)  
+<img alt="" src="/images/posts/python/scrapy_structure.png">
   
 Scrapy Engine(引擎): 负责Spider、ItemPipeline、Downloader、Scheduler中间的通讯，信号、数据传递等。  
 Scheduler(调度器): 它负责接受引擎发送过来的Request请求，并按照一定的方式进行整理排列，入队，当引擎需要时，交还给引擎。  
