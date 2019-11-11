@@ -1,7 +1,7 @@
 ---  
 layout: post  
 title: 'XML笔记-01'  
-date: 2019-11-10  
+date: 2019-11-11  
 tags: Java basis note JDBC
 ---  
   
@@ -183,23 +183,12 @@ xml作为软件的配置文件
         - PULL: Android操作系统内置的解析器,sax方式的.
         
     - Jsoup使用:
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        - 快速入门:
+            - 步骤:
+                1. 导入jar包
+                2. 获取Document对象
+                3. 获取对应的标签Element对象
+                4. 获取数据
         
         
         
