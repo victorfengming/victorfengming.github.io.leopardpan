@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title: 'XML笔记-01'  
+title: 'JavaWeb笔记01-XML'  
 date: 2019-11-11  
 tags: Java basis note JDBC
 ---  
@@ -181,7 +181,6 @@ xml作为软件的配置文件
             - jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
             - 本来是java的HTML解析器,由于他特别好用,所以用来解析xml
         - PULL: Android操作系统内置的解析器,sax方式的.
-        
     - Jsoup使用:
         - 快速入门:
             - 步骤:
@@ -189,14 +188,57 @@ xml作为软件的配置文件
                 2. 获取Document对象
                 3. 获取对应的标签Element对象
                 4. 获取数据
+        - 代码:
+        ```java
+        // 2.获取Document对象,根据xml文档获取
+                // 2.1 获取student.xml的path
+                String path = JsoupDemo01.class.getClassLoader().getResource("student.xml").getPath();
+                // 2.2 解析xml文档,加载文档进内存,获取dom树,-->Document
+                    Document document = Jsoup.parse(new File(path),"utf-8");
+                    //3. 获取元素对象Element
+                Elements elements = document.getElementsByTag("name");
+                System.out.println(elements.size());
+                // 3.1 获取第一个name的Element对象
+                Element element = elements.get(0);
+                // 3.2 获取数据
+                String name = element.text();
+                System.out.println(name);
+        ```
+    - 对象的使用:
+        - Jsoup: 工具类,可以解析html或xml文档,返回document对象
+            - parse:解析html文档或xml文档,返回Document
+            - parse(File in, String charsetName) : 解析xml或html文件
+            - parse(String html) : 解析xml或html字符串
+        - Document: 文档对象,代表内存中的DOM树
+            - 获取Element对象
+                - getElementById(String id):根据id属性值来获取唯一的Element对象
+                - getElementsByTag(String tagName) : 根据标签名称获取元素对象集合
+                - getElementsByAttribute(String key): 根据属性名称来获取元素对象集合
+                - getElementsByAttributeValue(String key,String value): 根据属性名称来获取元素对象集合
+        - Elements: 元素Element对象的集合.可以当做ArrayList<Element>来使用
+        - Element: 元素对象
+            - 获取子元素对象
+                - getElementById(String id):根据id属性值获取唯一的element对象
+                - getElementByTag(String tagName):根据标签名称获取元素对象集合
+                - getElementByAttribute(String key):根据属性名称获取元素对象集合
+                - getElementByAttributeValue(String key,String value):根据对应的属性名和属性值获取元素对象集合
+            - 获取属性值
+                - String attr(String key):根据属性名称获取属性值
+            - 获取文本内容
+                - String text():获取文本内容
+                - String html():获取标签的所有内容(包括字标签的字符串内容)
+        - Node: 节点对象
+            - 是Document和Element的父类
+    - 快捷查询方式:
+        1. selector:选择器
+            - 使用的方法:Elements select(String CSSQuery)
+                - 语法:参考selector类中定义的语法
+        2. XPath:XPath即为xml路径语言,它是一种用来确定XML(标准通用标记语言的子集)文档中某部分位置的语言
+            - 使用Jsoup的XPath需要额外导入jar包
         
         
         
         
+
         
-        
-        
-        
-        
-        
-        
+             
