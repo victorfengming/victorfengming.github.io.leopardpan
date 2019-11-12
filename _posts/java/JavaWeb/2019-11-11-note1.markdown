@@ -158,10 +158,10 @@ xml作为软件的配置文件
         2. 引入xsi前缀. `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`
         3. 引入xsd文件命名空间 `xsi:schemaLocation="http:www.itcast.cn/xml studnet.xsd"`
         4. 为每个xsd约束声明一个前缀,作为标识 `xmlns="http://www.itcast.cn/xml"`
-```xml
-<students xmlns="http://www.itcast.cn/xml" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.itcast.cn/xml students.xsd">
-```
+        ```xml
+        <students xmlns="http://www.itcast.cn/xml" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.itcast.cn/xml students.xsd">
+        ```
 - 解析:操作xml文档,将文件中你的数据读取到内存中
     - 操作xml文档
         1. 解析(读取):将文档中的数据读取到内存中
