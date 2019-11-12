@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title: 'JDBC笔记2'  
+title: 'JDBC笔记02'  
 date: 2019-11-09  
 tags: Java basis note JDBC
 ---  
