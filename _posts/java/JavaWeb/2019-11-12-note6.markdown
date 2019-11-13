@@ -1,0 +1,88 @@
+---  
+layout: post  
+title: 'JavaWeb笔记03-Servlet'  
+date: 2019-11-11  
+tags: Java basis note JDBC
+---  
+  
+  
+* content  
+{:toc}  
+  
+  
+  
+  
+
+
+# 今日内容
+1. Servlet
+2. HTTP协议
+3. Request
+
+## Servlet
+### 概念
+### 步骤
+### 执行原理
+### 生命周期
+### Servlet3.0注解配置
+### Servlet的体系结构
+- Servlet -- 接口
+    - GenericServlet -- 抽象类:将Servlet接口中其他方法做了默认空实现,只将service()方法作为抽象
+        - 将来定义Servlet类时候,可以继承GenericServlet,实现service()方法即可
+    - HTTPServlet -- 抽象类:对http协议的一种封装,简化操作
+        1. 定义类继承httpservlet方法
+        2. 腹泻doGet/doPost方法
+### Servlet相关配置
+1. urlpattern:Servlet访问路径
+    - 一个Servlet可以定义多个访问路径:`@WebServlet({"/d4","/dd4","/ddd4"})`
+    - 路径定义规则:
+        1. `/xxx`
+        2. `/xxx/xxx`
+        3. `*.do`*说白了就是通配符,这里注意前面不要加`/`
+
+
+## HTTP:
+### 概念:Hyper Text Transfer Protocol 超文本传输协议
+- 传输协议: 定义了,客户端和服务器端通信时,发送数据的格式
+- 特点:
+    1. 基于TCP/IP 的高级协议
+    2. 默认端口:80
+    3. 基于请求/响应模型的:一次请求对应一次响应
+    4. 无状态的:每次请求之间相互独立,不能交互数据
+- 历史版本:
+    - 1.0: 每一次请求响应都会建立新的链接
+    - 1.1: 复用
+
+### 请求消息数据格式:
+1. 请求行
+    - 请求方式 请求url 请求协议/版本 GET/login.html HTTP/1.1
+    - 请求方式:
+        - HTTP协议有7种请求方式,常用的有2种
+             - GET:
+                1. 请求参数在请求行中,在url后
+                2. 请求的url长度有限制的
+                3. 不太安全
+             - POST:
+                1. 请求参数在请求体中
+                2. 请求的url长度没有限制的
+                3. 相对的安全(其实对于有心人来说,都是能看到的)             
+2. 请求头
+    - 请求头名称:请求头值  
+    - 常见的请求头:
+        1. User-Agent: 浏览器告诉服务器,我访问你使用的浏览器版本信息
+            - 可以在服务端获取该头的信息,解决浏览器的兼容性问题
+        2. Referer:http://localhost/login.html
+            - 告诉服务器,我(当前的请求)从哪里来?
+                - 作用:
+                    1. 防盗链:
+                    2. 统计工作    
+3. 请求空行
+    - 空行
+4. 请求体(正文)        
+    - get方式的没有请求体的
+    - post方式的请求体是带了一些参数`username=zhangsan`
+### 响应消息数据格式:
+
+登录
+
+

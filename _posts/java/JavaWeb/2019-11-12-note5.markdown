@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title: 'JavaWeb笔记02-Tomcat&Servlet'  
+title: 'JavaWeb笔记02-Tomcat'  
 date: 2019-11-11  
 tags: Java basis note JDBC
 ---  
